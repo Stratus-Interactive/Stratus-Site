@@ -8,7 +8,7 @@ export const metadata = {
 export default function BetaPage() {
   return (
     <Flex direction="column" center fillWidth maxWidth="m" padding="l" gap="l">
-      <Flex direction="column" center textAlign="center" gap="m">
+      <Flex direction="column" center style={{ textAlign: "center" }} gap="m">
         <Heading variant="display-strong-xl" onBackground="neutral-strong">
           Join the Beta
         </Heading>
