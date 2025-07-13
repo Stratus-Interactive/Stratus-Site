@@ -1,5 +1,5 @@
 import { Flex, IconButton, SmartLink, Text } from "@once-ui-system/core";
-import { person, social } from "@/resources";
+import { company, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
 export const Footer = () => {
@@ -24,15 +24,9 @@ export const Footer = () => {
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
-          <Text paddingX="4">{person.name}</Text>
+          <Text paddingX="4">{company.name}</Text>
           <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
-            / Build your portfolio with{" "}
-            <SmartLink
-              href="https://once-ui.com/products/magic-portfolio"
-            >
-              Once UI
-            </SmartLink>
+            / Building the future of AI-powered productivity
           </Text>
         </Text>
         <Flex gap="16">
@@ -49,6 +43,9 @@ export const Footer = () => {
                 />
               ),
           )}
+          <SmartLink href="/privacy" variant="ghost" style={{ fontSize: 14, marginLeft: 8 }}>
+            Privacy Policy
+          </SmartLink>
         </Flex>
       </Flex>
       <Flex height="80" show="s"></Flex>

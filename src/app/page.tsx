@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
-import { home, about, person, newsletter, baseURL, routes } from "@/resources";
+import { Heading, Flex, Text, Button, RevealFx, Column, Badge, Row, Meta, Schema } from "@once-ui-system/core";
+import { home, about, company, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
@@ -17,64 +17,119 @@ export default function Home() {
         description={home.description}
         image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
         author={{
-          name: person.name,
+          name: company.name,
           url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth paddingY="24" gap="m">
-        <Column maxWidth="s">
+      <Column fillWidth paddingY="24" gap="m" horizontal="center">
+        <Column maxWidth="s" horizontal="center" style={{ textAlign: "center" }}>
           {home.featured.display && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+          <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="32" paddingLeft="12">
             <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
               href={home.featured.href}>
               <Row paddingY="2">{home.featured.title}</Row>
             </Badge>
           </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+            <Heading wrap="balance" variant="display-strong-l" style={{ textAlign: "center" }}>
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" style={{ textAlign: "center" }}>
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Flex>
-            </Button>
+          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
+            <Flex gap="12" mobileDirection="column" horizontal="center">
+              <Button
+                id="productivity"
+                data-border="rounded"
+                href="/productivity"
+                variant="primary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                See Stratus Productivity
+              </Button>
+              <Button
+                id="vision"
+                data-border="rounded"
+                href="/vision"
+                variant="secondary"
+                size="m"
+                weight="default"
+                arrowIcon
+              >
+                Our Vision
+              </Button>
+            </Flex>
           </RevealFx>
         </Column>
       </Column>
+      
+      {/* About Section */}
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Column maxWidth="s" gap="m" horizontal="center">
+          <Heading as="h2" variant="display-strong-s" wrap="balance" horizontal="center">
+            About Stratus Interactive
+          </Heading>
+          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" horizontal="center">
+            We're an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
+          </Text>
+          
+          {/* Stats Grid */}
+          <Flex gap="24" mobileDirection="column" paddingTop="24" horizontal="center" style={{ justifyContent: "center" }}>
+            <Column horizontal="center" gap="8">
+              <Text variant="display-strong-m" onBackground="brand-strong">Founded</Text>
+              <Text variant="heading-default-l" onBackground="neutral-weak">{company.founded}</Text>
+            </Column>
+            <Column horizontal="center" gap="8">
+              <Text variant="display-strong-m" onBackground="brand-strong">Focus Areas</Text>
+              <Text variant="heading-default-l" onBackground="neutral-weak">{company.focus}</Text>
+            </Column>
+            <Column horizontal="center" gap="8">
+              <Text variant="display-strong-m" onBackground="brand-strong">Vision</Text>
+              <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">Amplify human creativity through intuitive tools</Text>
+            </Column>
+          </Flex>
+        </Column>
       </RevealFx>
+
+      {/* Innovation Pillars */}
+      <RevealFx translateY="16" delay={0.8}>
+        <Column maxWidth="l" gap="m" horizontal="center">
+          <Heading as="h2" variant="display-strong-s" wrap="balance" horizontal="center">
+            Innovation Pillars
+          </Heading>
+          <Flex gap="24" mobileDirection="column">
+            <Column gap="8" flex={1}>
+              <Heading as="h3" variant="heading-strong-l">AI-First Design</Heading>
+              <Text onBackground="neutral-weak">Every product decision starts with AI capabilities and how they can enhance human workflows.</Text>
+            </Column>
+            <Column gap="8" flex={1}>
+              <Heading as="h3" variant="heading-strong-l">Human-Centered Innovation</Heading>
+              <Text onBackground="neutral-weak">Technology that serves people — not overwhelms them, with intuitive and emotionally resonant experiences.</Text>
+            </Column>
+            <Column gap="8" flex={1}>
+              <Heading as="h3" variant="heading-strong-l">Hardware Integration</Heading>
+              <Text onBackground="neutral-weak">Seamless integration between software and hardware to create truly unified productivity experiences.</Text>
+            </Column>
+            <Column gap="8" flex={1}>
+              <Heading as="h3" variant="heading-strong-l">Scalable Architecture</Heading>
+              <Text onBackground="neutral-weak">Building systems that can grow and adapt with users' needs and technological advancements.</Text>
+            </Column>
+          </Flex>
+        </Column>
+      </RevealFx>
+
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              Latest from the blog
+              Latest Insights
             </Heading>
           </Flex>
           <Flex flex={3} paddingX="20">
@@ -82,7 +137,7 @@ export default function Home() {
           </Flex>
         </Flex>
       )}
-      <Projects range={[2]} />
+      
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );

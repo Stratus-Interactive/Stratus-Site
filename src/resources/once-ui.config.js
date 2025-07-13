@@ -1,26 +1,27 @@
-import { home } from "./content";
+import { home, company } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.magic-portfolio.com";
+const baseURL = "https://stratusinteractive.com";
 
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
+  "/productivity": true,
+  "/vision": true,
   "/blog": true,
-  "/gallery": true,
+  // Removed /work and /gallery from navigation
 };
 
 const display = {
-  location: true,
-  time: true,
+  location: false, // Hide time zone in the top left
+  time: false,     // Hide time in the top right
   themeSwitcher: true
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  // Add protected routes here if needed
 };
 
 // Import and set font for each variant
@@ -175,16 +176,16 @@ const mailchimp = {
 const schema = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: company.name,
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: company.email,
 };
 
 // social links
 const sameAs = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  twitter: "https://twitter.com/stratus_ai",
+  linkedin: "https://www.linkedin.com/company/stratus-interactive",
+  github: "https://github.com/stratus-interactive",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };

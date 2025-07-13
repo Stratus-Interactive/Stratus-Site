@@ -1,94 +1,97 @@
-# **Magic Portfolio by Once UI**
+# Stratus Interactive Website
 
-View the [demo here](https://demo.magic-portfolio.com).
+The official website for Stratus Interactive, a future-focused technology company building AI-first software and hardware that enhances how people think, plan, and execute.
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+## About Stratus Interactive
 
+Stratus Interactive is centered around improving human productivity through intelligent tools that feel intuitive, emotionally resonant, and deeply personal. Our mission is to make technology that serves people — not overwhelms them.
 
-# **Getting started**
+We began with Stratus Productivity, a unified app that merges tasks, notes, events, goals, and intelligent AI support into a cohesive system. But Stratus Interactive's broader goal is to evolve into a full-stack AI ecosystem — spanning apps, devices, and personal cloud infrastructure — empowering users to live and work better.
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+## Website Features
 
-**1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
+- **Homepage**: Company overview, mission, and innovation pillars
+- **Stratus Productivity**: Detailed showcase of our flagship AI-powered productivity app
+- **Our Vision**: Future roadmap and long-term vision for AI ecosystem
+- **About**: Company information, team, and core technologies
+- **Blog**: Insights and updates about our products and vision
+- **Beta Signup**: Early access registration for Stratus Productivity
 
-**2. Install dependencies**
-```
+## Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Once UI Design System + Tailwind CSS
+- **Deployment**: Vercel-ready
+
+## Getting Started
+
+1. **Install dependencies**
+```bash
 npm install
 ```
 
-**3. Run dev server**
-```
+2. **Run development server**
+```bash
 npm run dev
 ```
 
-**4. Edit config**
+3. **Open your browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Development
+
+- **Build for production**: `npm run build`
+- **Start production server**: `npm start`
+- **Lint code**: `npm run lint`
+
+## Project Structure
+
 ```
-src/app/resources/config
+src/
+├── app/                    # Next.js app router pages
+│   ├── page.tsx           # Homepage
+│   ├── productivity/      # Stratus Productivity page
+│   ├── vision/           # Vision and roadmap page
+│   ├── about/            # About page
+│   ├── beta/             # Beta signup page
+│   └── layout.tsx        # Root layout
+├── components/           # Reusable components
+├── resources/           # Content and configuration
+└── utils/              # Utility functions
 ```
 
-**5. Edit content**
-```
-src/app/resources/content
-```
+## Content Management
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+The website content is managed through configuration files in `src/resources/`:
 
-# **Documentation**
+- `content.js` - Main content configuration
+- `config.js` - Site settings and metadata
+- `style.js` - Design system configuration
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+## Design System
 
-# **Features**
+This website uses the Once UI design system, providing:
 
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com)
+- Consistent typography and spacing
+- Responsive design patterns
+- Dark/light theme support
+- Accessible components
+- Modern animations and transitions
 
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+## Deployment
 
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+The website is optimized for deployment on Vercel:
 
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+1. Connect your GitHub repository to Vercel
+2. Configure environment variables if needed
+3. Deploy automatically on push to main branch
 
-## **Localization**
-- A localized version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+## Contact
 
-# **Authors**
+- **Email**: hello@stratusinteractive.com
+- **Website**: https://stratusinteractive.com
 
-Connect with us on Threads or LinkedIn.
+## License
 
-Lorant Toth: [Threads](https://www.threads.net/@lorant.one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
-
-Localization added by [François Hernandez](https://github.com/francoishernandez)
-
-# **Get involved**
-
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
-
-# **License**
-
-Distributed under the CC BY-NC 4.0 License.
-- Commercial usage is not allowed.
-- Attribution is required.
-- You can extend the license to commercial use by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+This project is proprietary to Stratus Interactive.
