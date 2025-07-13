@@ -1,70 +1,73 @@
 import { Logo } from "@once-ui-system/core";
 
-const person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  get name() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+const company = {
+  name: "Stratus Interactive",
+  tagline: "Intelligent tools for the future of productivity.",
+  description: "Stratus Interactive is building AI-first software and hardware that transforms how people think, plan, and execute.",
+  founded: "2024",
+  focus: "AI + Hardware Integration",
+  vision: "Amplify human creativity through intuitive tools",
+  email: "stratusfeedback@gmail.com", // updated email
+  location: "America/New_York", // Using proper timezone identifier for TimeDisplay component
+  // Additional properties for compatibility with existing pages
+  avatar: "/images/Logos/Light-Logo.png",
+  role: "AI-First Technology Company",
+  languages: ["English"], // Company languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Join the Stratus Interactive Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      Stay updated on our latest developments, product launches, and insights into the future of AI-powered productivity.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://instagram.com/stratusinteractive",
+  },
+  {
+    name: "Facebook",
+    icon: "facebook",
+    link: "https://facebook.com/stratusinteractive",
+  },
+  {
+    name: "X",
+    icon: "x", // Using the proper X icon from icons.ts
+    link: "https://x.com/stratus_ai",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/company/stratus-interactive",
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: `mailto:${company.email}`,
   },
 ];
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/gallery/Mulit Screen Demo.png",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${company.name} - Intelligent tools for the future of productivity`,
+  description: `${company.description}`,
+  headline: <>{company.tagline}</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Featured: <strong className="ml-4">Stratus Productivity</strong></>,
+    href: "/productivity",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      We're an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
     </>
   ),
 };
@@ -72,135 +75,116 @@ const home = {
 const about = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `About – ${company.name}`,
+  description: `Learn about ${company.name}'s mission to transform productivity through AI-first design`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Stratus Interactive",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        At Stratus Interactive we are working towards building the future of personal and professional productivity — starting with intelligent software and hardware that think with you. We create AI-first systems designed to integrate seamlessly into your life and enhance how you plan, work, and grow.<br /><br />
+        At the heart of our vision is Skye, your personalized AI assistant, built to adapt to your needs, understand your habits, and empower your goals. Whether you’re organizing your day or coordinating your team, Stratus makes it feel effortless — like it was built just for you.<br /><br />
+        We believe great technology should serve people — not overwhelm them.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
-      {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
-    ],
+    display: false,
+    title: "Company Overview",
+    experiences: [],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Innovation Pillars",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "AI-First Design",
+        description: <>We lead with AI — integrating intelligence from the ground up to create tools that anticipate your needs and streamline your workflows.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Productivity-Centered Innovation",
+        description: <>Everything we build puts productivity first. Our products are designed to make your life easier — not more complex.</>,
+      },
+      {
+        name: "Hardware Integration",
+        description: <>At Stratus we build more than software. Our long-term roadmap includes seamless integration with personal AI servers, smart devices, and next-gen input systems.</>,
+      },
+      {
+        name: "Scalable Architecture",
+        description: <>Built for longevity. Our products evolve with your goals and the world around you — modular, adaptable, and ready for the future.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Core Technologies",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "AI & Machine Learning",
+        description: <>From natural language understanding to dynamic scheduling, our AI models — including our assistant Skye — are designed to think like a partner, not just a processor.</>,
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            src: "/images/Skye/Skye.png",
+            alt: "Skye AI Assistant",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Productivity Software",
+        description: <>Stratus Productivity is the first product in our ecosystem. It’s more than a todo list — it’s a life organizer that feels as intuitive and useful.</>,
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            src: "/images/gallery/Mulit Screen Demo.png",
+            alt: "Stratus Productivity Multi Screen Demo",
             width: 16,
             height: 9,
           },
         ],
+      },
+      {
+        title: "Personal AI Infrastructure (Coming Soon)",
+        description: <>We’re pioneering personal AI servers that keep your data private, contextual, and accessible across all your devices — for a truly tailored and intelligent experience.</>,
+        images: [],
       },
     ],
   },
 };
 
+const productivity = {
+  path: "/productivity",
+  label: "Stratus Productivity",
+  title: "Stratus Productivity – AI-Powered Productivity App",
+  description: "Our flagship AI-powered productivity app that reimagines how you organize thoughts, manage tasks, and maintain focus.",
+  // Create new project pages by adding a new .mdx file to app/productivity/posts
+  // All features will be listed on the /productivity route
+};
+
+const vision = {
+  path: "/vision",
+  label: "Our Vision",
+  title: "Vision – The Future of AI-Powered Productivity",
+  description: "Explore our roadmap for building a comprehensive AI ecosystem that transforms how people live and work.",
+  // Create new vision posts by adding a new .mdx file to app/vision/posts
+  // All vision content will be listed on the /vision route
+};
+
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Insights & Updates",
+  description: `Read about ${company.name}'s latest developments, product insights, and thoughts on the future of productivity`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -208,61 +192,80 @@ const blog = {
 const work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  title: `Projects – ${company.name}`,
+  description: `Products and projects by ${company.name}`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  title: `Product Gallery – ${company.name}`,
+  description: `A showcase of ${company.name}'s products and interfaces`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      src: "/images/gallery/product-1.jpg",
+      alt: "Stratus Productivity Interface",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      src: "/images/gallery/product-2.jpg",
+      alt: "AI Dashboard",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      src: "/images/gallery/product-3.jpg",
+      alt: "Hardware Prototype",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      src: "/images/gallery/product-4.jpg",
+      alt: "Mobile App Interface",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      src: "/images/gallery/product-5.jpg",
+      alt: "Desktop Application",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      src: "/images/gallery/product-6.jpg",
+      alt: "AI Assistant Interface",
       orientation: "vertical",
     },
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const routes = {
+  "/": home,
+  "/about": about,
+  "/productivity": productivity,
+  "/vision": vision,
+  "/blog": blog,
+  "/privacy": true, // Enable privacy policy route
+  // Removed work and gallery from exported routes
+};
+
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "https://stratusinteractive.com";
+
+// Create person reference for compatibility
+const person = company;
+
+export {
+  company,
+  person,
+  newsletter,
+  social,
+  home,
+  about,
+  productivity,
+  vision,
+  blog,
+  work,
+  gallery,
+  routes,
+  baseURL,
+};

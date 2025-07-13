@@ -16,6 +16,9 @@ import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import ClientLogo from "./ClientLogo";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -65,6 +68,13 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+      {/* Logo at the top of the About page */}
+      <Flex horizontal="center" marginBottom="l">
+        {/* Client-only logo */}
+        <React.Suspense fallback={null}>
+          <ClientLogo />
+        </React.Suspense>
+      </Flex>
       {about.tableOfContent.display && (
         <Column
           left="0"
@@ -78,33 +88,6 @@ export default function About() {
         </Column>
       )}
       <Flex fillWidth mobileDirection="column" horizontal="center">
-        {about.avatar.display && (
-          <Column
-            className={styles.avatar}
-            position="sticky"
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
-                    {language}
-                  </Tag>
-                ))}
-              </Flex>
-            )}
-          </Column>
-        )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column
             id={about.intro.title}

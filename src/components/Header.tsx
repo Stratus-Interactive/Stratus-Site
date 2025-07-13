@@ -4,8 +4,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, company, about, productivity, vision, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -44,6 +46,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const { theme } = useTheme();
 
   return (
     <>
@@ -59,11 +62,21 @@ export const Header = () => {
         padding="8"
         horizontal="center"
         data-border="rounded"
+        style={{ alignItems: "center", justifyContent: "center" }}
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+        {/* Logo on the left, smaller for balance */}
+        <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
+          <Image
+            src={theme === "dark" ? "/images/Logos/Dark-Logo.png" : "/images/Logos/Light-Logo.png"}
+            alt="Stratus Interactive Logo"
+            width={48}
+            height={48}
+            priority
+            style={{ objectFit: "contain", borderRadius: "12px" }}
+          />
         </Flex>
-        <Flex fillWidth horizontal="center">
+        {/* Centered navigation, always centered regardless of logo */}
+        <Flex fillWidth horizontal="center" style={{ justifyContent: "center", position: "absolute", left: 0, right: 0, margin: "auto", zIndex: 2 }}>
           <Flex
             background="page"
             border="neutral-alpha-weak"
@@ -72,6 +85,7 @@ export const Header = () => {
             padding="4"
             horizontal="center"
             zIndex={1}
+            style={{ margin: "0 auto" }}
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
@@ -92,6 +106,40 @@ export const Header = () => {
                     prefixIcon="person"
                     href="/about"
                     selected={pathname === "/about"}
+                  />
+                </>
+              )}
+              {routes["/productivity"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="grid"
+                    href="/productivity"
+                    label={productivity.label}
+                    selected={pathname.startsWith("/productivity")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="grid"
+                    href="/productivity"
+                    selected={pathname.startsWith("/productivity")}
+                  />
+                </>
+              )}
+              {routes["/vision"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="eye"
+                    href="/vision"
+                    label={vision.label}
+                    selected={pathname.startsWith("/vision")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="eye"
+                    href="/vision"
+                    selected={pathname.startsWith("/vision")}
                   />
                 </>
               )}
@@ -163,7 +211,7 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex hide="s">{display.time && <TimeDisplay timeZone={company.location} />}</Flex>
           </Flex>
         </Flex>
       </Flex>
