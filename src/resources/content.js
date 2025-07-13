@@ -97,7 +97,15 @@ const about = {
   work: {
     display: false,
     title: "Company Overview",
-    experiences: [],
+    experiences: [
+      {
+        company: "",
+        role: "",
+        timeframe: "",
+        achievements: [],
+        images: [],
+      },
+    ],
   },
   studies: {
     display: true,
