@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Button, SmartLink, Input, TextArea } from "@once-ui-system/core";
+import { Flex, Heading, Text, Button, SmartLink, Input } from "@once-ui-system/core";
 
 export const metadata = {
   title: "Join Beta - Stratus Interactive",
@@ -32,7 +32,7 @@ export default function BetaPage() {
         <Flex direction="column" gap="m">
           <Heading variant="display-strong-l">Beta Application</Heading>
           <Text onBackground="neutral-weak">
-            Tell us about yourself and how you plan to use Stratus Productivity. We're looking for users who are passionate about productivity and excited to help us build something amazing.
+            Tell us about yourself and how you plan to use Stratus Productivity. We&apos;re looking for users who are passionate about productivity and excited to help us build something amazing.
           </Text>
         </Flex>
 
@@ -54,19 +54,25 @@ export default function BetaPage() {
 
           <Flex direction="column" gap="s">
             <Text variant="label-strong-s">How do you plan to use Stratus Productivity? *</Text>
-            <TextArea 
-              placeholder="Tell us about your workflow, challenges, and what you're hoping to achieve with AI-powered productivity tools."
-              rows={4}
-              required
-            />
+            <div style={{ width: '100%' }}>
+              <textarea
+                placeholder="Tell us about your workflow, challenges, and what you're hoping to achieve with AI-powered productivity tools."
+                rows={4}
+                required
+                style={{ width: '100%', padding: '8px', borderRadius: '8px', border: '1px solid #444', fontSize: '1rem', background: 'var(--background, #111)', color: 'var(--foreground, #fff)' }}
+              />
+            </div>
           </Flex>
 
           <Flex direction="column" gap="s">
             <Text variant="label-strong-s">What excites you most about AI-powered productivity?</Text>
-            <TextArea 
-              placeholder="Share your thoughts on how AI could enhance your productivity and creativity."
-              rows={3}
-            />
+            <div style={{ width: '100%' }}>
+              <textarea
+                placeholder="Share your thoughts on how AI could enhance your productivity and creativity."
+                rows={3}
+                style={{ width: '100%', padding: '8px', borderRadius: '8px', border: '1px solid #444', fontSize: '1rem', background: 'var(--background, #111)', color: 'var(--foreground, #fff)' }}
+              />
+            </div>
           </Flex>
 
           <Button type="submit" variant="solid" size="l" marginTop="m">
@@ -76,7 +82,7 @@ export default function BetaPage() {
 
         <Flex direction="column" gap="m" marginTop="l">
           <Text variant="body-default-s" onBackground="neutral-weak" textAlign="center">
-            We'll review applications and reach out within 1-2 weeks. Beta access will be granted on a rolling basis as we prepare for launch.
+            We&apos;ll review applications and reach out within 1-2 weeks. Beta access will be granted on a rolling basis as we prepare for launch.
           </Text>
         </Flex>
 

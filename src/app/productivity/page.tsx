@@ -87,7 +87,7 @@ export default function ProductivityPage() {
               Seamless Integration
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
-              Works across all your devices with real-time sync. Whether you're on desktop, tablet, or mobile, your productivity system stays in perfect harmony.
+              Works across all your devices with real-time sync. Whether you&apos;re on desktop, tablet, or mobile, your productivity system stays in perfect harmony.
             </Text>
           </Column>
 
@@ -98,9 +98,9 @@ export default function ProductivityPage() {
             </Heading>
             <Text variant="body-default-l" style={{ marginBottom: 0 }}>
               Be among the first to experience a productivity system that feels handcrafted — not hacked together.<br />
-              Stratus isn’t another dashboard or checklist app. It’s your intelligent co-pilot — turning scattered tasks, notes, and calendars into one seamless flow.<br />
-              By joining the beta, you’re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
-              <strong>Let’s build the future of productivity — together.</strong>
+              Stratus isn&apos;t another dashboard or checklist app. It&apos;s your intelligent co-pilot — turning scattered tasks, notes, and calendars into one seamless flow.<br />
+              By joining the beta, you&apos;re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
+              <strong>Let&apos;s build the future of productivity — together.</strong>
             </Text>
             <Flex gap="48" wrap direction={{ base: "column", md: "row" }} style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
               {/* Public Beta */}

@@ -72,29 +72,14 @@ export default function Home() {
       
       {/* About Section */}
       <RevealFx translateY="16" delay={0.6}>
-        <Column maxWidth="s" gap="m" horizontal="center">
+        <Column maxWidth="m" gap="m" horizontal="center" style={{ textAlign: 'center' }}>
           <Heading as="h2" variant="display-strong-s" wrap="balance" horizontal="center">
             About Stratus Interactive
           </Heading>
           <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" horizontal="center">
-            We're an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
+            We&apos;re an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
           </Text>
-          
-          {/* Stats Grid */}
-          <Flex gap="24" mobileDirection="column" paddingTop="24" horizontal="center" style={{ justifyContent: "center" }}>
-            <Column horizontal="center" gap="8">
-              <Text variant="display-strong-m" onBackground="brand-strong">Founded</Text>
-              <Text variant="heading-default-l" onBackground="neutral-weak">{company.founded}</Text>
-            </Column>
-            <Column horizontal="center" gap="8">
-              <Text variant="display-strong-m" onBackground="brand-strong">Focus Areas</Text>
-              <Text variant="heading-default-l" onBackground="neutral-weak">{company.focus}</Text>
-            </Column>
-            <Column horizontal="center" gap="8">
-              <Text variant="display-strong-m" onBackground="brand-strong">Vision</Text>
-              <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">Amplify human creativity through intuitive tools</Text>
-            </Column>
-          </Flex>
+          {/* Removed the stats grid (Founded, Focus Areas, Vision) */}
         </Column>
       </RevealFx>
 
@@ -119,7 +104,7 @@ export default function Home() {
             </Column>
             <Column gap="8" flex={1}>
               <Heading as="h3" variant="heading-strong-l">Scalable Architecture</Heading>
-              <Text onBackground="neutral-weak">Building systems that can grow and adapt with users' needs and technological advancements.</Text>
+              <Text onBackground="neutral-weak">Building systems that can grow and adapt with users&apos; needs and technological advancements.</Text>
             </Column>
           </Flex>
         </Column>
