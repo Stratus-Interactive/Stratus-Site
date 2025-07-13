@@ -39,17 +39,17 @@ export default function BetaPage() {
         <Flex direction="column" gap="m" as="form">
           <Flex direction="column" gap="s">
             <Text variant="label-strong-s">Name *</Text>
-            <Input placeholder="Your full name" required />
+            <Input id="beta-name" placeholder="Your full name" required />
           </Flex>
 
           <Flex direction="column" gap="s">
             <Text variant="label-strong-s">Email *</Text>
-            <Input type="email" placeholder="your.email@example.com" required />
+            <Input id="beta-email" type="email" placeholder="your.email@example.com" required />
           </Flex>
 
           <Flex direction="column" gap="s">
             <Text variant="label-strong-s">Current Productivity Tools</Text>
-            <Input placeholder="e.g., Notion, Todoist, Obsidian, etc." />
+            <Input id="beta-tools" placeholder="e.g., Notion, Todoist, Obsidian, etc." />
           </Flex>
 
           <Flex direction="column" gap="s">
