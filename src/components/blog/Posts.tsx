@@ -30,7 +30,7 @@ export function Posts({
 
     return (
         <>
-            {displayedBlogs.length > 0 && (
+            {displayedBlogs.length > 0 ? (
                 <Grid
                     columns={columns} mobileColumns="1"
                     fillWidth marginBottom="40" gap="12">
@@ -43,6 +43,10 @@ export function Posts({
                         />
                     ))}
                 </Grid>
+            ) : (
+                <div style={{ textAlign: 'center', padding: '48px 0', color: 'var(--foreground, #fff)', fontSize: 22, opacity: 0.8 }}>
+                    🚧 Our blog is brewing!<br />Fresh insights and stories are coming soon.
+                </div>
             )}
         </>
     );

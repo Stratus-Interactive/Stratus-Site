@@ -29,28 +29,24 @@ const social = [
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://instagram.com/stratusinteractive",
+    link: "https://www.instagram.com/stratus_interactive/",
   },
   {
     name: "Facebook",
     icon: "facebook",
-    link: "https://facebook.com/stratusinteractive",
+    link: "https://www.facebook.com/profile.php?id=61577373873916",
   },
   {
     name: "X",
-    icon: "x", // Using the proper X icon from icons.ts
-    link: "https://x.com/stratus_ai",
+    icon: "x",
+    link: "https://x.com/Inovate_Stratus",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/stratus-interactive",
+    link: "https://www.linkedin.com/company/105635591/admin/dashboard/",
   },
-  {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${company.email}`,
-  },
+  // Removed the Email button from social links
 ];
 
 const home = {
@@ -67,7 +63,7 @@ const home = {
   },
   subline: (
     <>
-      We're an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
+      We&apos;re an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
     </>
   ),
 };
