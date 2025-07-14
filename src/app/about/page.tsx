@@ -15,7 +15,7 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
-import React from "react";
+import * as React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import ClientLogo from "./ClientLogo";
@@ -163,7 +163,7 @@ export default function About() {
                       {experience.role}
                     </Text>
                     <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                      {experience.achievements.map((achievement: React.ReactElement, index: number) => (
                         <Text
                           as="li"
                           variant="body-default-m"

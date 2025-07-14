@@ -73,10 +73,10 @@ export default function Home() {
       {/* About Section */}
       <RevealFx translateY="16" delay={0.6}>
         <Column maxWidth="m" gap="m" horizontal="center" style={{ textAlign: 'center' }}>
-          <Heading as="h2" variant="display-strong-s" wrap="balance" horizontal="center">
+          <Heading as="h2" variant="display-strong-s" wrap="balance" style={{ textAlign: 'center' }}>
             About Stratus Interactive
           </Heading>
-          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" horizontal="center">
+          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" style={{ textAlign: 'center' }}>
             We&apos;re an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
           </Text>
           {/* Removed the stats grid (Founded, Focus Areas, Vision) */}
@@ -86,7 +86,7 @@ export default function Home() {
       {/* Innovation Pillars */}
       <RevealFx translateY="16" delay={0.8}>
         <Column maxWidth="l" gap="m" horizontal="center">
-          <Heading as="h2" variant="display-strong-s" wrap="balance" horizontal="center">
+          <Heading as="h2" variant="display-strong-s" wrap="balance" style={{ textAlign: 'center' }}>
             Innovation Pillars
           </Heading>
           <Flex gap="24" mobileDirection="column">

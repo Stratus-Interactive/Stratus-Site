@@ -43,7 +43,7 @@ export const Footer = () => {
                 />
               ),
           )}
-          <SmartLink href="/privacy" variant="ghost" style={{ fontSize: 14, marginLeft: 8 }}>
+          <SmartLink href="/privacy" style={{ fontSize: 14, marginLeft: 8 }}>
             Privacy Policy
           </SmartLink>
         </Flex>
