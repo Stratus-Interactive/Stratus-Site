@@ -55,10 +55,10 @@ export default function ProductivityPage() {
               Unified productivity powered by AI that reimagines how you organize thoughts, manage tasks, and maintain focus.
             </Text>
             <Flex className={styles.blockAlign} gap="12" marginTop="m">
-              <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="solid" size="l">
+              <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l">
                 Learn About the Beta
               </Button>
-              <Button as={SmartLink} href="/vision" variant="ghost" size="l">
+              <Button href="/vision" variant="secondary" size="l">
                 Learn More
               </Button>
             </Flex>
@@ -102,7 +102,8 @@ export default function ProductivityPage() {
               By joining the beta, you&apos;re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
               <strong>Let&apos;s build the future of productivity — together.</strong>
             </Text>
-            <Flex gap="48" wrap direction={{ base: "column", md: "row" }} style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
+            <Flex gap="48" wrap direction="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
+              {/* TODO: For responsive row/column, use Tailwind or CSS media queries */}
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
                 <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
@@ -110,7 +111,7 @@ export default function ProductivityPage() {
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Public Beta</Heading>
                 <Text variant="body-default-m">Get access through limited spots to the free public beta!</Text>
-                <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="solid" size="m" style={{ marginTop: 8 }}>
+                <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="m" style={{ marginTop: 8 }}>
                   Download the Beta!
                 </Button>
               </Column>
@@ -121,7 +122,7 @@ export default function ProductivityPage() {
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Kickstarter</Heading>
                 <Text variant="body-default-m">Get access to the beta by backing us on Kickstarter!</Text>
-                <Button variant="solid" size="m" style={{ marginTop: 8 }} disabled>
+                <Button variant="primary" size="m" style={{ marginTop: 8 }} disabled>
                   Coming Soon!
                 </Button>
               </Column>

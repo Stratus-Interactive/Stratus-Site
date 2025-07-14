@@ -84,7 +84,7 @@ export default function VisionPage() {
 
           <Flex gap="16" marginTop="l" horizontal="center" style={{ justifyContent: 'center' }}>
             <Button
-              variant="solid"
+              variant="primary"
               size="m"
               style={{ marginTop: 8 }}
               onClick={() => window.location.href = '/productivity'}

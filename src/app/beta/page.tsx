@@ -75,19 +75,21 @@ export default function BetaPage() {
             </div>
           </Flex>
 
-          <Button type="submit" variant="solid" size="l" marginTop="m">
-            Submit Application
-          </Button>
+          <Flex marginTop="m">
+            <Button type="submit" variant="primary" size="l">
+              Submit Application
+            </Button>
+          </Flex>
         </Flex>
 
         <Flex direction="column" gap="m" marginTop="l">
-          <Text variant="body-default-s" onBackground="neutral-weak" textAlign="center">
+          <Text variant="body-default-s" onBackground="neutral-weak" style={{ textAlign: 'center' }}>
             We&apos;ll review applications and reach out within 1-2 weeks. Beta access will be granted on a rolling basis as we prepare for launch.
           </Text>
         </Flex>
 
         <Flex center gap="m" marginTop="l">
-          <Button as={SmartLink} href="/productivity" variant="ghost" size="m">
+          <Button href="/productivity" variant="secondary" size="m">
             Learn More About Stratus Productivity
           </Button>
         </Flex>
