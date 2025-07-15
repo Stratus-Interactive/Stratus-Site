@@ -41,7 +41,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
                 )}
                 <Column
                     position="relative"
-                    fillWidth gap="4"
+                    fillWidth gap="8"
                     padding="24"
                     vertical="center">
                     <Heading
@@ -50,10 +50,18 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
                         wrap="balance">
                         {post.metadata.title}
                     </Heading>
+                    {post.metadata.summary && (
+                        <Text
+                            variant="body-default-s"
+                            onBackground="neutral-weak"
+                            wrap="balance">
+                            {post.metadata.summary}
+                        </Text>
+                    )}
                     <Text
                         variant="label-default-s"
                         onBackground="neutral-weak">
-                        {formatDate(post.metadata.publishedAt, false)}
+                        {post.metadata.publishedAt && formatDate(post.metadata.publishedAt, false)}
                     </Text>
                     { post.metadata.tag &&
                         <Tag
