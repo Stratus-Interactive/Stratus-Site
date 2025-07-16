@@ -102,7 +102,7 @@ export default function ProductivityPage() {
               By joining the beta, you&apos;re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
               <strong>Let&apos;s build the future of productivity — together.</strong>
             </Text>
-            <Flex gap="48" wrap direction="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
+            <Flex gap="48" wrap direction="row" mobileDirection="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
               {/* TODO: For responsive row/column, use Tailwind or CSS media queries */}
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
