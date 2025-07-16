@@ -112,7 +112,7 @@ export default function ProductivityPage() {
               marginTop: '24px'
             }}>
               <Text variant="body-default-l" wrap="balance" style={{ fontStyle: 'italic', textAlign: 'center' }}>
-                "The Stratus Productivity app has helped me tremendously with keeping the overhead for my landscape business organized. It takes away a lot of stress because now I have all of my info in one place. It saves me lots of time and keeps me more focused not having to go back and forth between multiple apps. I highly recommend you give Stratus a try!"
+                &ldquo;The Stratus Productivity app has helped me tremendously with keeping the overhead for my landscape business organized. It takes away a lot of stress because now I have all of my info in one place. It saves me lots of time and keeps me more focused not having to go back and forth between multiple apps. I highly recommend you give Stratus a try!&rdquo;
               </Text>
               <Flex direction="column" gap="4" horizontal="center" style={{ marginTop: '16px' }}>
                 <Text variant="label-strong-s" onBackground="brand-strong">
