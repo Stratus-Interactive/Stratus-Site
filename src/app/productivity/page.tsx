@@ -102,6 +102,27 @@ export default function ProductivityPage() {
               By joining the beta, you&apos;re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
               <strong>Let&apos;s build the future of productivity — together.</strong>
             </Text>
+            
+            {/* Customer Testimonial */}
+            <Column gap="m" style={{ 
+              background: 'var(--neutral-alpha-weak)', 
+              padding: '32px 24px', 
+              borderRadius: '12px',
+              border: '1px solid var(--neutral-alpha-medium)',
+              marginTop: '24px'
+            }}>
+              <Text variant="body-default-l" wrap="balance" style={{ fontStyle: 'italic', textAlign: 'center' }}>
+                "The Stratus Productivity app has helped me tremendously with keeping the overhead for my landscape business organized. It takes away a lot of stress because now I have all of my info in one place. It saves me lots of time and keeps me more focused not having to go back and forth between multiple apps. I highly recommend you give Stratus a try!"
+              </Text>
+              <Flex direction="column" gap="4" horizontal="center" style={{ marginTop: '16px' }}>
+                <Text variant="label-strong-s" onBackground="brand-strong">
+                  Reed Strozier
+                </Text>
+                <Text variant="label-default-xs" onBackground="neutral-weak">
+                  Dream Gardens Inc
+                </Text>
+              </Flex>
+            </Column>
             <Flex gap="48" wrap direction="row" mobileDirection="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
               {/* TODO: For responsive row/column, use Tailwind or CSS media queries */}
               {/* Public Beta */}

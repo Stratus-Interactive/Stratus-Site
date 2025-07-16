@@ -110,6 +110,40 @@ export default function Home() {
         </Column>
       </RevealFx>
 
+      {/* Customer Testimonial */}
+      <RevealFx translateY="16" delay={1.0}>
+        <Column maxWidth="m" gap="l" horizontal="center" style={{ textAlign: 'center' }}>
+          <Column gap="m" style={{ 
+            background: 'var(--neutral-alpha-weak)', 
+            padding: '48px 32px', 
+            borderRadius: '16px',
+            border: '1px solid var(--neutral-alpha-medium)'
+          }}>
+            <Text variant="heading-default-l" wrap="balance" style={{ fontStyle: 'italic', lineHeight: 1.6 }}>
+              "The Stratus Productivity app has helped me tremendously with keeping the overhead for my landscape business organized. It takes away a lot of stress because now I have all of my info in one place. It saves me lots of time and keeps me more focused not having to go back and forth between multiple apps. I highly recommend you give Stratus a try!"
+            </Text>
+            <Flex direction="column" gap="4" style={{ marginTop: '24px' }}>
+              <Text variant="label-strong-m" onBackground="brand-strong">
+                Reed Strozier
+              </Text>
+              <Text variant="label-default-s" onBackground="neutral-weak">
+                Dream Gardens Inc
+              </Text>
+            </Flex>
+          </Column>
+          <Flex gap="12" horizontal="center">
+            <Button
+              href="/productivity"
+              variant="primary"
+              size="m"
+              arrowIcon
+            >
+              Try Stratus Productivity
+            </Button>
+          </Flex>
+        </Column>
+      </RevealFx>
+
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
