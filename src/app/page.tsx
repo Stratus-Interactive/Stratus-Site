@@ -96,7 +96,7 @@ export default function Home() {
             </Column>
             <Column gap="8" flex={1}>
               <Heading as="h3" variant="heading-strong-l">Human-Centered Innovation</Heading>
-              <Text onBackground="neutral-weak">Technology that serves people — not overwhelms them, with intuitive and emotionally resonant experiences.</Text>
+              <Text onBackground="neutral-weak">Technology that serves people — with intuitive interfaces and experiences that empower human thought and creativity, not limit it.</Text>
             </Column>
             <Column gap="8" flex={1}>
               <Heading as="h3" variant="heading-strong-l">Hardware Integration</Heading>
