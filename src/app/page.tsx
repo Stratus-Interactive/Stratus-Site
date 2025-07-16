@@ -46,13 +46,13 @@ export default function Home() {
               <Button
                 id="productivity"
                 data-border="rounded"
-                href="/productivity"
+                href="/productivity#Join the Beta"
                 variant="primary"
                 size="m"
                 weight="default"
                 arrowIcon
               >
-                See Stratus Productivity
+                Try the Stratus Productivity Beta
               </Button>
               <Button
                 id="vision"
@@ -133,12 +133,12 @@ export default function Home() {
           </Column>
           <Flex gap="12" horizontal="center">
             <Button
-              href="/productivity"
+              href="/productivity#Join the Beta"
               variant="primary"
               size="m"
               arrowIcon
             >
-              Try Stratus Productivity
+              Try the Stratus Productivity Beta
             </Button>
           </Flex>
         </Column>
