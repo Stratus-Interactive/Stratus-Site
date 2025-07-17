@@ -54,11 +54,11 @@ export default function ProductivityPage() {
             <Text className={styles.textAlign} variant="display-default-xs" onBackground="neutral-weak">
               Unified productivity powered by AI that reimagines how you organize thoughts, manage tasks, and maintain focus.
             </Text>
-            <Flex className={styles.blockAlign} gap="12" marginTop="m">
-              <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l">
+            <Flex className={styles.blockAlign} gap="16" marginTop="m" mobileDirection="column" style={{ width: '100%' }}>
+              <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l" fillWidth style={{ minHeight: '48px' }}>
                 Learn About the Beta
               </Button>
-              <Button href="/vision" variant="secondary" size="l">
+              <Button href="/vision" variant="secondary" size="l" fillWidth style={{ minHeight: '48px' }}>
                 Learn More
               </Button>
             </Flex>
@@ -132,7 +132,7 @@ export default function ProductivityPage() {
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Public Beta</Heading>
                 <Text variant="body-default-m">Get access through limited spots to the free public beta!</Text>
-                <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="m" style={{ marginTop: 8 }}>
+                <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
                   Download the Beta!
                 </Button>
               </Column>
@@ -143,7 +143,7 @@ export default function ProductivityPage() {
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Kickstarter</Heading>
                 <Text variant="body-default-m">Get access to the beta by backing us on Kickstarter!</Text>
-                <Button variant="primary" size="m" style={{ marginTop: 8 }} disabled>
+                <Button variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }} disabled>
                   Coming Soon!
                 </Button>
               </Column>
