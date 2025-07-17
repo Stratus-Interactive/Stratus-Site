@@ -15,7 +15,7 @@ const routes = {
 const display = {
   location: false, // Hide time zone in the top left
   time: false,     // Hide time in the top right
-  themeSwitcher: true
+  themeSwitcher: false  // Disable theme switcher - dark mode only
 };
 
 // Enable password protection on selected routes
@@ -61,7 +61,7 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
+  theme: "dark", // Force dark mode only
   neutral: "gray", // sand | gray | slate | custom
   brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom

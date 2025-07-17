@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 
 import { routes, display, company, about, productivity, vision, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -46,7 +45,6 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-  const { theme } = useTheme();
 
   return (
     <>
@@ -67,7 +65,7 @@ export const Header = () => {
         {/* Logo on the left, smaller for balance */}
         <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
           <Image
-            src={theme === "dark" ? "/images/Logos/Dark-Logo.png" : "/images/Logos/Light-Logo.png"}
+            src="/images/Logos/Dark-Logo.png"
             alt="Stratus Interactive Logo"
             width={48}
             height={48}
