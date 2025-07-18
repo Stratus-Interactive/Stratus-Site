@@ -48,6 +48,29 @@ export default function ProductivityPage() {
       <Flex fillWidth mobileDirection="column" horizontal="center">
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
           <Column id="Stratus Productivity" fillWidth minHeight="160" vertical="center" marginBottom="32">
+            {/* Header Image */}
+            <div style={{ 
+              width: '100%', 
+              maxWidth: '800px', 
+              margin: '0 auto 32px auto',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+            }}>
+              <Image 
+                src="/images/gallery/Mulit Screen Demo.png" 
+                alt="Stratus Productivity Multi-Screen Demo" 
+                width={800} 
+                height={600} 
+                style={{ 
+                  width: '100%', 
+                  height: 'auto',
+                  objectFit: 'cover'
+                }}
+                priority
+              />
+            </div>
+            
             <Heading className={styles.textAlign} variant="display-strong-xl">
               Stratus Productivity
             </Heading>
