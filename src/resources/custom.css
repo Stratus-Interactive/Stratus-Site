@@ -52,3 +52,81 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+/* Enhanced text visibility - ensure all text is properly visible on dark backgrounds */
+[data-theme="dark"] {
+  /* Ensure core text elements have proper contrast */
+  body, html {
+    color: #ffffff;
+  }
+  
+  /* Force light colors for once-ui text variants to ensure visibility */
+  .neutral-on-background-strong {
+    color: #ffffff !important;
+  }
+  
+  .neutral-on-background-medium {
+    color: #ededed !important;
+  }
+  
+  .neutral-on-background-weak {
+    color: #b8b8b8 !important;
+  }
+}
+
+/* Enhanced mobile text visibility - additional mobile-specific overrides */
+@media (max-width: 768px) {
+  /* Force white/light text colors on mobile for better visibility */
+  body, html {
+    color: #ffffff !important;
+  }
+  
+  /* Ensure all text elements have proper contrast */
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+  }
+  
+  p, span, div:not(.button) {
+    color: #ededed !important;
+  }
+  
+  /* Once-UI text variants - force light colors */
+  .neutral-on-background-strong {
+    color: #ffffff !important;
+  }
+  
+  .neutral-on-background-medium {
+    color: #ededed !important;
+  }
+  
+  .neutral-on-background-weak {
+    color: #b8b8b8 !important;
+  }
+  
+  /* Ensure brand text is visible */
+  .brand-on-background-strong {
+    color: #ffffff !important;
+  }
+  
+  .brand-on-background-medium {
+    color: #8db3ff !important;
+  }
+  
+  .brand-on-background-weak {
+    color: #6f94f1 !important;
+  }
+  
+  /* Make sure buttons and interactive elements are visible */
+  .button {
+    color: inherit !important;
+  }
+  
+  /* Links should be visible */
+  a:not(.button) {
+    color: #6f94f1 !important;
+  }
+  
+  a:not(.button):hover {
+    color: #8db3ff !important;
+  }
+}
