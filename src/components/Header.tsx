@@ -87,7 +87,22 @@ export const Header = () => {
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <>
+                  <ToggleButton 
+                    className="s-flex-hide"
+                    prefixIcon="home" 
+                    href="/" 
+                    label="Home"
+                    selected={pathname === "/"} 
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="home"
+                    href="/"
+                    label="Home"
+                    selected={pathname === "/"}
+                  />
+                </>
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
@@ -103,6 +118,7 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="person"
                     href="/about"
+                    label="About"
                     selected={pathname === "/about"}
                   />
                 </>
@@ -120,6 +136,7 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="grid"
                     href="/productivity"
+                    label="Productivity"
                     selected={pathname.startsWith("/productivity")}
                   />
                 </>
@@ -137,6 +154,7 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="eye"
                     href="/vision"
+                    label="Vision"
                     selected={pathname.startsWith("/vision")}
                   />
                 </>
@@ -154,6 +172,7 @@ export const Header = () => {
                     className="s-flex-show"
                     prefixIcon="book"
                     href="/blog"
+                    label="Blog"
                     selected={pathname.startsWith("/blog")}
                   />
                 </>

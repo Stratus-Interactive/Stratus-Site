@@ -18,6 +18,42 @@
         top: auto;
         position: fixed;
         bottom: var(--static-space-24);
+        
+        /* Enhanced mobile navigation styling */
+        header {
+            padding: var(--static-space-8) var(--static-space-12);
+        }
+        
+        /* Ensure mobile navigation is properly spaced */
+        .navigation-container {
+            max-width: 95vw;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        
+        /* Mobile navigation button adjustments */
+        button {
+            white-space: nowrap;
+            font-size: 0.875rem;
+            padding: var(--static-space-8) var(--static-space-12);
+            
+            /* Ensure text is visible */
+            color: #ffffff !important;
+            
+            &:hover {
+                color: #ededed !important;
+            }
+        }
+        
+        /* Mobile gap adjustments */
+        .mobile-nav-gap {
+            gap: var(--static-space-2);
+        }
     }
 
     .mask {

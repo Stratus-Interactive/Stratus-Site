@@ -129,4 +129,48 @@
   a:not(.button):hover {
     color: #8db3ff !important;
   }
+  
+  /* Mobile Navigation Enhancements */
+  header {
+    /* Ensure header background is solid on mobile */
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Navigation button styling for mobile */
+  .s-flex-show button,
+  .s-flex-show [role="button"] {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 6px 8px !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Selected/active navigation item */
+  .s-flex-show button[data-selected="true"],
+  .s-flex-show [role="button"][data-selected="true"] {
+    color: #6f94f1 !important;
+    background: rgba(111, 148, 241, 0.1) !important;
+  }
+  
+  /* Navigation container on mobile */
+  header > div > div {
+    max-width: calc(100vw - 32px) !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  header > div > div::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Reduce gap between navigation items on mobile */
+  .s-flex-show {
+    gap: 2px !important;
+  }
 }
