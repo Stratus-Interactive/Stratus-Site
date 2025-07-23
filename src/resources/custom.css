@@ -158,24 +158,26 @@
     color: #6f94f1 !important;
   }
   
-  /* Ensure proper button text contrast */
-  .button.primary {
+  /* Ensure proper button text contrast on mobile - theme aware */
+  [data-theme="dark"] .button.primary,
+  [data-theme="dark"] .button.secondary,
+  [data-theme="dark"] .button.tertiary,
+  [data-theme="dark"] .button.ghost,
+  [data-theme="dark"] .button.danger {
     color: #ffffff !important;
   }
   
-  .button.secondary {
-    color: #000000 !important;
-  }
-  
-  .button.tertiary {
-    color: #000000 !important;
-  }
-  
-  .button.ghost {
+  [data-theme="light"] .button.primary {
     color: #ffffff !important;
   }
   
-  .button.danger {
+  [data-theme="light"] .button.secondary,
+  [data-theme="light"] .button.tertiary,
+  [data-theme="light"] .button.ghost {
+    color: #000000 !important;
+  }
+  
+  [data-theme="light"] .button.danger {
     color: #ffffff !important;
   }
   
