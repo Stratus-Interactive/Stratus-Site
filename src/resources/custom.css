@@ -72,6 +72,48 @@
   .neutral-on-background-weak {
     color: #b8b8b8 !important;
   }
+  
+  /* Ensure proper button text contrast in dark mode */
+  .button.primary {
+    color: #ffffff !important;
+  }
+  
+  .button.secondary {
+    color: #ffffff !important;
+  }
+  
+  .button.tertiary {
+    color: #ffffff !important;
+  }
+  
+  .button.ghost {
+    color: #ffffff !important;
+  }
+  
+  .button.danger {
+    color: #ffffff !important;
+  }
+}
+
+/* Ensure proper button text contrast in light mode */
+[data-theme="light"] .button.primary {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .button.secondary {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .button.tertiary {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .button.ghost {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .button.danger {
+  color: #ffffff !important;
 }
 
 /* Enhanced mobile text visibility - additional mobile-specific overrides */
@@ -116,9 +158,25 @@
     color: #6f94f1 !important;
   }
   
-  /* Make sure buttons and interactive elements are visible */
-  .button {
-    color: inherit !important;
+  /* Ensure proper button text contrast */
+  .button.primary {
+    color: #ffffff !important;
+  }
+  
+  .button.secondary {
+    color: #000000 !important;
+  }
+  
+  .button.tertiary {
+    color: #000000 !important;
+  }
+  
+  .button.ghost {
+    color: #ffffff !important;
+  }
+  
+  .button.danger {
+    color: #ffffff !important;
   }
   
   /* Links should be visible */
