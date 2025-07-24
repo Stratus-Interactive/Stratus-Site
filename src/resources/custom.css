@@ -239,16 +239,17 @@
   }
 }
 
-/* WHITE BUTTONS GET BLACK TEXT - PERIOD */
-button,
-a,
-[class*="button"],
-[class*="Button"] {
+/* SECONDARY BUTTONS GET BLACK TEXT */
+[class*="secondary"] {
   color: #000000 !important;
 }
 
-/* Only primary and danger buttons keep white text */
-[class*="primary"],
-[class*="danger"] {
-  color: #ffffff !important;
+/* GHOST BUTTONS GET BLACK TEXT */
+[class*="ghost"] {
+  color: #000000 !important;
+}
+
+/* TERTIARY BUTTONS GET BLACK TEXT */
+[class*="tertiary"] {
+  color: #000000 !important;
 }
