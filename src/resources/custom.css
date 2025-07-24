@@ -254,12 +254,12 @@
   color: #000000 !important;
 }
 
-/* BUTTON TEXT INSIDE DIVS GET BLACK TEXT */
-.font-label,
-.font-l,
-.font-default,
-[class*="font-label"],
-[class*="font-l"],
-[class*="font-default"] {
+/* ONLY SECONDARY BUTTON TEXT GETS BLACK TEXT */
+[class*="secondary"] .font-label,
+[class*="secondary"] .font-l,
+[class*="secondary"] .font-default,
+[class*="secondary"] [class*="font-label"],
+[class*="secondary"] [class*="font-l"],
+[class*="secondary"] [class*="font-default"] {
   color: #000000 !important;
 }
