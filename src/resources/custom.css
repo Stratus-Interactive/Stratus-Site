@@ -239,16 +239,16 @@
   }
 }
 
-/* FINAL OVERRIDE - Force button text colors regardless of CSS modules */
-[data-theme="light"] *[class*="button"] {
+/* WHITE BUTTONS GET BLACK TEXT - PERIOD */
+button,
+a,
+[class*="button"],
+[class*="Button"] {
   color: #000000 !important;
 }
 
-[data-theme="light"] *[class*="button"][class*="primary"],
-[data-theme="light"] *[class*="button"][class*="danger"] {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] *[class*="button"] {
+/* Only primary and danger buttons keep white text */
+[class*="primary"],
+[class*="danger"] {
   color: #ffffff !important;
 }
