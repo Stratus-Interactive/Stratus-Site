@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Button, Input, Text, Heading, Column, Flex } from '@/components';
+import { Button, Input, Text, Heading, Column, Flex } from '@once-ui-system/core';
 
 export default function PasswordResetPage() {
   const [password, setPassword] = useState('');
@@ -139,7 +139,7 @@ export default function PasswordResetPage() {
 
           {/* Instructions */}
           <Text style={{ color: '#e2e8f0' }}>
-            Enter your new password below. Make sure it's secure and easy to remember.
+            Enter your new password below. Make sure it&apos;s secure and easy to remember.
           </Text>
 
           {/* Error Message */}
