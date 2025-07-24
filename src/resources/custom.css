@@ -73,38 +73,41 @@
     color: #b8b8b8 !important;
   }
   
-  /* Ensure proper button text contrast in dark mode with higher specificity */
-  button.button.primary,
-  a.button.primary,
-  button.button.secondary,
-  a.button.secondary,
-  button.button.tertiary,
-  a.button.tertiary,
-  button.button.ghost,
-  a.button.ghost,
-  button.button.danger,
-  a.button.danger {
+  /* Dark mode button text - all white */
+  .button {
     color: #ffffff !important;
   }
 }
 
-/* Ensure proper button text contrast in light mode with higher specificity */
-[data-theme="light"] button.button.primary,
-[data-theme="light"] a.button.primary {
+/* Direct button text color fixes - target the actual CSS classes */
+[data-theme="light"] .button.primary {
   color: #ffffff !important;
 }
 
-[data-theme="light"] button.button.secondary,
-[data-theme="light"] a.button.secondary,
-[data-theme="light"] button.button.tertiary,
-[data-theme="light"] a.button.tertiary,
-[data-theme="light"] button.button.ghost,
-[data-theme="light"] a.button.ghost {
+[data-theme="light"] .button.secondary {
   color: #000000 !important;
 }
 
-[data-theme="light"] button.button.danger,
-[data-theme="light"] a.button.danger {
+[data-theme="light"] .button.tertiary {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .button.ghost {
+  color: #000000 !important;
+}
+
+[data-theme="light"] .button.danger {
+  color: #ffffff !important;
+}
+
+/* Force black text on any button with white/light background */
+[data-theme="light"] .button {
+  color: #000000 !important;
+}
+
+/* Override for primary and danger buttons that should have white text */
+[data-theme="light"] .button.primary,
+[data-theme="light"] .button.danger {
   color: #ffffff !important;
 }
 
@@ -150,36 +153,18 @@
     color: #6f94f1 !important;
   }
   
-  /* Ensure proper button text contrast on mobile - theme aware with higher specificity */
-  [data-theme="dark"] button.button.primary,
-  [data-theme="dark"] a.button.primary,
-  [data-theme="dark"] button.button.secondary,
-  [data-theme="dark"] a.button.secondary,
-  [data-theme="dark"] button.button.tertiary,
-  [data-theme="dark"] a.button.tertiary,
-  [data-theme="dark"] button.button.ghost,
-  [data-theme="dark"] a.button.ghost,
-  [data-theme="dark"] button.button.danger,
-  [data-theme="dark"] a.button.danger {
+  /* Mobile button text fixes - simple and direct */
+  [data-theme="dark"] .button {
     color: #ffffff !important;
   }
   
-  [data-theme="light"] button.button.primary,
-  [data-theme="light"] a.button.primary {
-    color: #ffffff !important;
-  }
-  
-  [data-theme="light"] button.button.secondary,
-  [data-theme="light"] a.button.secondary,
-  [data-theme="light"] button.button.tertiary,
-  [data-theme="light"] a.button.tertiary,
-  [data-theme="light"] button.button.ghost,
-  [data-theme="light"] a.button.ghost {
+  [data-theme="light"] .button {
     color: #000000 !important;
   }
   
-  [data-theme="light"] button.button.danger,
-  [data-theme="light"] a.button.danger {
+  /* Override for primary and danger buttons that should have white text */
+  [data-theme="light"] .button.primary,
+  [data-theme="light"] .button.danger {
     color: #ffffff !important;
   }
   
