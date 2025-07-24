@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Button, Input, Text, Heading, Column, Flex } from '@once-ui-system/core';
 
-export default function PasswordResetPage() {
+function PasswordResetContent() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -159,6 +159,7 @@ export default function PasswordResetPage() {
                 </Text>
                 <Flex gap="2" style={{ position: 'relative' }}>
                   <Input
+                    id="new-password"
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -168,7 +169,7 @@ export default function PasswordResetPage() {
                   />
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="tertiary"
                     size="s"
                     onClick={() => setShowPassword(!showPassword)}
                     style={{ 
@@ -191,6 +192,7 @@ export default function PasswordResetPage() {
                 </Text>
                 <Flex gap="2" style={{ position: 'relative' }}>
                   <Input
+                    id="confirm-password"
                     type={showConfirmPassword ? "text" : "password"}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -200,7 +202,7 @@ export default function PasswordResetPage() {
                   />
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="tertiary"
                     size="s"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     style={{ 
@@ -250,7 +252,7 @@ export default function PasswordResetPage() {
             Remember your password?{' '}
             <Button
               href="/"
-              variant="ghost"
+              variant="tertiary"
               style={{ color: '#3b82f6', padding: 0, textDecoration: 'underline' }}
             >
               Return to home
@@ -259,5 +261,22 @@ export default function PasswordResetPage() {
         </Column>
       </div>
     </div>
+  );
+}
+
+export default function PasswordResetPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
+        <div className="w-full max-w-md">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto"></div>
+            <Text className="mt-4 text-white">Loading...</Text>
+          </div>
+        </div>
+      </div>
+    }>
+      <PasswordResetContent />
+    </Suspense>
   );
 } 
