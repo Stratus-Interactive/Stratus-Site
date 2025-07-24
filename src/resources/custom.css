@@ -100,14 +100,21 @@
   color: #ffffff !important;
 }
 
-/* Force black text on any button with white/light background */
-[data-theme="light"] .button {
+/* AGGRESSIVE button text fixes - override everything */
+[data-theme="light"] .button,
+[data-theme="light"] button.button,
+[data-theme="light"] a.button,
+[data-theme="light"] [class*="button"] {
   color: #000000 !important;
 }
 
 /* Override for primary and danger buttons that should have white text */
 [data-theme="light"] .button.primary,
-[data-theme="light"] .button.danger {
+[data-theme="light"] button.button.primary,
+[data-theme="light"] a.button.primary,
+[data-theme="light"] .button.danger,
+[data-theme="light"] button.button.danger,
+[data-theme="light"] a.button.danger {
   color: #ffffff !important;
 }
 
@@ -153,18 +160,28 @@
     color: #6f94f1 !important;
   }
   
-  /* Mobile button text fixes - simple and direct */
-  [data-theme="dark"] .button {
+  /* AGGRESSIVE mobile button text fixes */
+  [data-theme="dark"] .button,
+  [data-theme="dark"] button.button,
+  [data-theme="dark"] a.button,
+  [data-theme="dark"] [class*="button"] {
     color: #ffffff !important;
   }
   
-  [data-theme="light"] .button {
+  [data-theme="light"] .button,
+  [data-theme="light"] button.button,
+  [data-theme="light"] a.button,
+  [data-theme="light"] [class*="button"] {
     color: #000000 !important;
   }
   
   /* Override for primary and danger buttons that should have white text */
   [data-theme="light"] .button.primary,
-  [data-theme="light"] .button.danger {
+  [data-theme="light"] button.button.primary,
+  [data-theme="light"] a.button.primary,
+  [data-theme="light"] .button.danger,
+  [data-theme="light"] button.button.danger,
+  [data-theme="light"] a.button.danger {
     color: #ffffff !important;
   }
   
@@ -220,4 +237,18 @@
   .s-flex-show {
     gap: 2px !important;
   }
+}
+
+/* FINAL OVERRIDE - Force button text colors regardless of CSS modules */
+[data-theme="light"] *[class*="button"] {
+  color: #000000 !important;
+}
+
+[data-theme="light"] *[class*="button"][class*="primary"],
+[data-theme="light"] *[class*="button"][class*="danger"] {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] *[class*="button"] {
+  color: #ffffff !important;
 }
