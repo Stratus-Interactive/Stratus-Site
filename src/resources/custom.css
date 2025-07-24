@@ -253,3 +253,13 @@
 [class*="tertiary"] {
   color: #000000 !important;
 }
+
+/* BUTTON TEXT INSIDE DIVS GET BLACK TEXT */
+.font-label,
+.font-l,
+.font-default,
+[class*="font-label"],
+[class*="font-l"],
+[class*="font-default"] {
+  color: #000000 !important;
+}
