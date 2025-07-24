@@ -33,14 +33,17 @@ This guide provides everything needed to integrate the password reset functional
 
 ## Integration Steps
 
-### Step 1: Supabase Configuration
+### Step 1: Environment Variables
 
-The password reset system is configured to use your Supabase project:
+Create a `.env.local` file in your project root with these environment variables:
 
 ```bash
-SUPABASE_URL=https://ibqsddfmamczdgmsytvb.supabase.co
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://ibqsddfmamczdgmsytvb.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlicXNkZGZtYW1jemRnbXN5dHZiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MDkwMTEwNywiZXhwIjoyMDY2NDc3MTA3fQ.wx-BQmjUi5LPBdaEOamBUqMkNfVWBTPS9OkR9oqVyEw
 ```
+
+**IMPORTANT**: Never commit the `.env.local` file to git. It should be in your `.gitignore`.
 
 ### Step 2: Configure Supabase Redirect URLs
 
