@@ -73,46 +73,38 @@
     color: #b8b8b8 !important;
   }
   
-  /* Ensure proper button text contrast in dark mode */
-  .button.primary {
-    color: #ffffff !important;
-  }
-  
-  .button.secondary {
-    color: #ffffff !important;
-  }
-  
-  .button.tertiary {
-    color: #ffffff !important;
-  }
-  
-  .button.ghost {
-    color: #ffffff !important;
-  }
-  
-  .button.danger {
+  /* Ensure proper button text contrast in dark mode with higher specificity */
+  button.button.primary,
+  a.button.primary,
+  button.button.secondary,
+  a.button.secondary,
+  button.button.tertiary,
+  a.button.tertiary,
+  button.button.ghost,
+  a.button.ghost,
+  button.button.danger,
+  a.button.danger {
     color: #ffffff !important;
   }
 }
 
-/* Ensure proper button text contrast in light mode */
-[data-theme="light"] .button.primary {
+/* Ensure proper button text contrast in light mode with higher specificity */
+[data-theme="light"] button.button.primary,
+[data-theme="light"] a.button.primary {
   color: #ffffff !important;
 }
 
-[data-theme="light"] .button.secondary {
+[data-theme="light"] button.button.secondary,
+[data-theme="light"] a.button.secondary,
+[data-theme="light"] button.button.tertiary,
+[data-theme="light"] a.button.tertiary,
+[data-theme="light"] button.button.ghost,
+[data-theme="light"] a.button.ghost {
   color: #000000 !important;
 }
 
-[data-theme="light"] .button.tertiary {
-  color: #000000 !important;
-}
-
-[data-theme="light"] .button.ghost {
-  color: #000000 !important;
-}
-
-[data-theme="light"] .button.danger {
+[data-theme="light"] button.button.danger,
+[data-theme="light"] a.button.danger {
   color: #ffffff !important;
 }
 
@@ -158,26 +150,36 @@
     color: #6f94f1 !important;
   }
   
-  /* Ensure proper button text contrast on mobile - theme aware */
-  [data-theme="dark"] .button.primary,
-  [data-theme="dark"] .button.secondary,
-  [data-theme="dark"] .button.tertiary,
-  [data-theme="dark"] .button.ghost,
-  [data-theme="dark"] .button.danger {
+  /* Ensure proper button text contrast on mobile - theme aware with higher specificity */
+  [data-theme="dark"] button.button.primary,
+  [data-theme="dark"] a.button.primary,
+  [data-theme="dark"] button.button.secondary,
+  [data-theme="dark"] a.button.secondary,
+  [data-theme="dark"] button.button.tertiary,
+  [data-theme="dark"] a.button.tertiary,
+  [data-theme="dark"] button.button.ghost,
+  [data-theme="dark"] a.button.ghost,
+  [data-theme="dark"] button.button.danger,
+  [data-theme="dark"] a.button.danger {
     color: #ffffff !important;
   }
   
-  [data-theme="light"] .button.primary {
+  [data-theme="light"] button.button.primary,
+  [data-theme="light"] a.button.primary {
     color: #ffffff !important;
   }
   
-  [data-theme="light"] .button.secondary,
-  [data-theme="light"] .button.tertiary,
-  [data-theme="light"] .button.ghost {
+  [data-theme="light"] button.button.secondary,
+  [data-theme="light"] a.button.secondary,
+  [data-theme="light"] button.button.tertiary,
+  [data-theme="light"] a.button.tertiary,
+  [data-theme="light"] button.button.ghost,
+  [data-theme="light"] a.button.ghost {
     color: #000000 !important;
   }
   
-  [data-theme="light"] .button.danger {
+  [data-theme="light"] button.button.danger,
+  [data-theme="light"] a.button.danger {
     color: #ffffff !important;
   }
   
