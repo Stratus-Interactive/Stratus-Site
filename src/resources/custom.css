@@ -254,12 +254,23 @@
   color: #000000 !important;
 }
 
-/* ONLY SECONDARY BUTTON TEXT GETS BLACK TEXT */
+/* REVERSE THE BUTTON TEXT COLORS */
+/* PRIMARY BUTTON TEXT GETS BLACK TEXT */
+[class*="primary"] .font-label,
+[class*="primary"] .font-l,
+[class*="primary"] .font-default,
+[class*="primary"] [class*="font-label"],
+[class*="primary"] [class*="font-l"],
+[class*="primary"] [class*="font-default"] {
+  color: #000000 !important;
+}
+
+/* SECONDARY BUTTON TEXT GETS WHITE TEXT */
 [class*="secondary"] .font-label,
 [class*="secondary"] .font-l,
 [class*="secondary"] .font-default,
 [class*="secondary"] [class*="font-label"],
 [class*="secondary"] [class*="font-l"],
 [class*="secondary"] [class*="font-default"] {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
