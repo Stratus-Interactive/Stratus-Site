@@ -166,8 +166,8 @@ export default function ProductivityPage() {
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Kickstarter</Heading>
                 <Text variant="body-default-m">Get access to the beta by backing us on Kickstarter!</Text>
-                <Button variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }} disabled>
-                  Coming Soon!
+                <Button onClick={() => window.open('https://www.kickstarter.com/projects/evanbradley/stratus-simplify-your-life', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
+                  Back on Kickstarter!
                 </Button>
               </Column>
             </Flex>
