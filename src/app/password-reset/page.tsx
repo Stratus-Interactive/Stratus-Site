@@ -21,15 +21,21 @@ function PasswordResetContent() {
   const type = searchParams.get('type');
 
   useEffect(() => {
-    // Validate token and type parameters
-    if (!token || type !== 'recovery') {
+    // Debug: Log the parameters we're receiving
+    console.log('Password reset parameters:', { token, type, searchParams: Object.fromEntries(searchParams.entries()) });
+    
+    // Check for different possible parameter formats
+    const hasToken = token || searchParams.get('access_token') || searchParams.get('refresh_token');
+    const hasCorrectType = type === 'recovery' || type === 'reset' || searchParams.get('action') === 'reset';
+    
+    if (!hasToken) {
       setError('Invalid or missing reset link. Please request a new password reset.');
       return;
     }
     
-    // Token is present and type is correct
+    // Token is present, proceed with validation
     setTokenValid(true);
-  }, [token, type]);
+  }, [token, type, searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,13 +59,16 @@ function PasswordResetContent() {
     setError('');
 
     try {
+      // Get the actual token from various possible parameter names
+      const actualToken = token || searchParams.get('access_token') || searchParams.get('refresh_token');
+      
       const response = await fetch('/api/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          token,
+          token: actualToken,
           password,
         }),
       });
