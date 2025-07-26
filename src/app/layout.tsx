@@ -132,7 +132,6 @@ export default async function RootLayout({
           />
           <Flex fillWidth minHeight="16" hide="s"/>
             <KickstarterBanner />
-            <Flex fillWidth minHeight="16" style={{ marginTop: '64px' }} />
             <Header />
             <Flex
               zIndex={0}
@@ -140,6 +139,7 @@ export default async function RootLayout({
               padding="l"
               horizontal="center"
               flex={1}
+              style={{ paddingTop: '112px' }}
             >
               <Flex horizontal="center" fillWidth minHeight="0">
                 {children}

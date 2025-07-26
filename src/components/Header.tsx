@@ -48,11 +48,11 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: '48px' }} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
-        position="unset"
+        position="fixed"
         className={styles.position}
         as="header"
         zIndex={9}
@@ -60,7 +60,11 @@ export const Header = () => {
         padding="8"
         horizontal="center"
         data-border="rounded"
-        style={{ alignItems: "center", justifyContent: "center" }}
+        style={{ 
+          alignItems: "center", 
+          justifyContent: "center",
+          top: "48px"
+        }}
       >
         {/* Logo on the left, smaller for balance */}
         <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
