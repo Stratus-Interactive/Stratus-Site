@@ -81,7 +81,7 @@ export default function Home() {
             About Stratus Interactive
           </Heading>
           <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" style={{ textAlign: 'center' }}>
-            We&apos;re an AI software and hardware company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
+            We&apos;re an AI company focused on creating intelligent solutions that enhance human capability and workflow efficiency. Our products are designed to feel natural, intuitive, and deeply integrated into your life.
           </Text>
           {/* Removed the stats grid (Founded, Focus Areas, Vision) */}
         </Column>
