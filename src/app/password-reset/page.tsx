@@ -23,46 +23,58 @@ function PasswordResetContent() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check if user has a valid session (Supabase handles token validation automatically)
-    const checkSession = async () => {
+    // Handle password reset token exchange
+    const handlePasswordReset = async () => {
       try {
-        const { data: { session }, error } = await supabase.auth.getSession();
+        // First, check if we have a valid session
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         
-        console.log('Session check:', { session: !!session, error });
+        console.log('Session check:', { session: !!session, sessionError });
         
-        if (error) {
-          console.error('Session check error:', error);
-          setError('Invalid or expired reset link. Please request a new password reset.');
+        if (session) {
+          // User has a valid session, proceed with password reset
+          setTokenValid(true);
           return;
         }
 
-        if (!session) {
-          // No session, but let's check if there are URL parameters that might indicate a reset flow
-          const hasResetParams = searchParams.get('token') || 
-                                searchParams.get('access_token') || 
-                                searchParams.get('refresh_token') ||
-                                searchParams.get('type');
+        // No session, check for URL parameters that might contain the reset token
+        const token = searchParams.get('token') || 
+                      searchParams.get('access_token') || 
+                      searchParams.get('refresh_token');
+        const type = searchParams.get('type');
+        
+        console.log('URL parameters:', { token: !!token, type, searchParams: Object.fromEntries(searchParams.entries()) });
+        
+        if (token && type === 'recovery') {
+          // We have a recovery token, try to exchange it for a session
+          console.log('Attempting to exchange recovery token for session...');
           
-          console.log('No session, but reset params found:', { hasResetParams });
+          const { data, error } = await supabase.auth.verifyOtp({
+            token_hash: token,
+            type: 'recovery'
+          });
           
-          if (hasResetParams) {
-            // There are reset parameters, let's try to process them
-            setTokenValid(true);
-          } else {
+          console.log('Token exchange result:', { success: !!data, error });
+          
+          if (error) {
+            console.error('Token exchange error:', error);
             setError('Invalid or expired reset link. Please request a new password reset.');
+            return;
           }
-          return;
+          
+          // Token exchange successful, proceed with password reset
+          setTokenValid(true);
+        } else {
+          // No valid token found
+          setError('Invalid or expired reset link. Please request a new password reset.');
         }
-
-        // User has a valid session, proceed with password reset
-        setTokenValid(true);
       } catch (error) {
-        console.error('Session validation error:', error);
+        console.error('Password reset handling error:', error);
         setError('Invalid or expired reset link. Please request a new password reset.');
       }
     };
 
-    checkSession();
+    handlePasswordReset();
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
