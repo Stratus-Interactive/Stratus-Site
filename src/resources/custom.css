@@ -277,23 +277,23 @@
 
 /* Responsive main content padding for banner */
 .main-content-with-banner {
-  padding-top: 112px;
+  padding-top: 120px;
 }
 
 @media (max-width: 768px) {
   .main-content-with-banner {
-    padding-top: 104px;
+    padding-top: 112px;
   }
 }
 
 @media (max-width: 600px) {
   .main-content-with-banner {
-    padding-top: 96px;
+    padding-top: 104px;
   }
 }
 
 @media (max-width: 480px) {
   .main-content-with-banner {
-    padding-top: 88px;
+    padding-top: 96px;
   }
 }
