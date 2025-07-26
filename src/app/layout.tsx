@@ -139,7 +139,7 @@ export default async function RootLayout({
               padding="l"
               horizontal="center"
               flex={1}
-              style={{ paddingTop: '112px' }}
+              className="main-content-with-banner"
             >
               <Flex horizontal="center" fillWidth minHeight="0">
                 {children}

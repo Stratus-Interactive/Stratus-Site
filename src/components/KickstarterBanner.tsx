@@ -7,10 +7,19 @@ import styles from './KickstarterBanner.module.scss';
 export const KickstarterBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isDismissed, setIsDismissed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem('kickstarter-banner-dismissed');
     if (dismissed) setIsDismissed(true);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const handleDismiss = () => {
@@ -25,6 +34,10 @@ export const KickstarterBanner = () => {
 
   if (isDismissed || !isVisible) return null;
 
+  const bannerText = isMobile 
+    ? "Stratus is live on Kickstarter!" 
+    : "Stratus is live on Kickstarter! Back us now for early access.";
+
   return (
     <Flex
       fillWidth
@@ -38,24 +51,38 @@ export const KickstarterBanner = () => {
       gap="2"
     >
       <Text
-        variant="label-strong-s"
-        style={{ color: 'var(--neutral-on-background-strong)', fontWeight: 600 }}
+        variant={isMobile ? "body-default-s" : "label-strong-s"}
+        style={{ 
+          color: 'var(--neutral-on-background-strong)', 
+          fontWeight: 600,
+          textAlign: 'center'
+        }}
       >
-        Stratus is live on Kickstarter! Back us now for early access.
+        {bannerText}
       </Text>
       <Button
         onClick={handleKickstarterClick}
         variant="primary"
-        size="s"
-        style={{ minWidth: '100px', fontWeight: 600 }}
+        size={isMobile ? "s" : "s"}
+        style={{ 
+          minWidth: isMobile ? '80px' : '100px', 
+          fontWeight: 600,
+          fontSize: isMobile ? '12px' : '14px'
+        }}
       >
-        Back Now
+        {isMobile ? "Back" : "Back Now"}
       </Button>
       <Button
         onClick={handleDismiss}
         variant="tertiary"
         size="s"
-        style={{ color: 'var(--neutral-on-background-medium)', opacity: 0.7, padding: '4px 8px', minWidth: 'auto' }}
+        style={{ 
+          color: 'var(--neutral-on-background-medium)', 
+          opacity: 0.7, 
+          padding: isMobile ? '2px 6px' : '4px 8px', 
+          minWidth: 'auto',
+          fontSize: isMobile ? '12px' : '14px'
+        }}
         aria-label="Dismiss banner"
       >
         ✕
