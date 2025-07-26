@@ -3,6 +3,11 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Button, Input, Text, Heading, Column, Flex } from '@once-ui-system/core';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function PasswordResetContent() {
   const [password, setPassword] = useState('');
@@ -18,20 +23,46 @@ function PasswordResetContent() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check for any token parameters in the URL
-    const token = searchParams.get('token') || 
-                  searchParams.get('access_token') || 
-                  searchParams.get('refresh_token') ||
-                  searchParams.get('type');
-    
-    console.log('Password reset parameters:', { 
-      searchParams: Object.fromEntries(searchParams.entries()),
-      token 
-    });
-    
-    // For now, let's allow the form to be shown even without tokens
-    // The API will handle the actual validation
-    setTokenValid(true);
+    // Check if user has a valid session (Supabase handles token validation automatically)
+    const checkSession = async () => {
+      try {
+        const { data: { session }, error } = await supabase.auth.getSession();
+        
+        console.log('Session check:', { session: !!session, error });
+        
+        if (error) {
+          console.error('Session check error:', error);
+          setError('Invalid or expired reset link. Please request a new password reset.');
+          return;
+        }
+
+        if (!session) {
+          // No session, but let's check if there are URL parameters that might indicate a reset flow
+          const hasResetParams = searchParams.get('token') || 
+                                searchParams.get('access_token') || 
+                                searchParams.get('refresh_token') ||
+                                searchParams.get('type');
+          
+          console.log('No session, but reset params found:', { hasResetParams });
+          
+          if (hasResetParams) {
+            // There are reset parameters, let's try to process them
+            setTokenValid(true);
+          } else {
+            setError('Invalid or expired reset link. Please request a new password reset.');
+          }
+          return;
+        }
+
+        // User has a valid session, proceed with password reset
+        setTokenValid(true);
+      } catch (error) {
+        console.error('Session validation error:', error);
+        setError('Invalid or expired reset link. Please request a new password reset.');
+      }
+    };
+
+    checkSession();
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,29 +87,17 @@ function PasswordResetContent() {
     setError('');
 
     try {
-      // Get any token from URL parameters
-      const token = searchParams.get('token') || 
-                    searchParams.get('access_token') || 
-                    searchParams.get('refresh_token');
-      
-      const response = await fetch('/api/auth/reset-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          token: token || 'no-token', // Send a placeholder if no token
-          password,
-        }),
+      // Update password using Supabase client directly
+      const { error } = await supabase.auth.updateUser({
+        password: password
       });
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (error) {
+        console.error('Password update error:', error);
+        setError(error.message || 'Failed to reset password. Please try again.');
+      } else {
         setSuccess(true);
         setError('');
-      } else {
-        setError(data.error || 'Failed to reset password. Please try again.');
       }
     } catch (err) {
       console.error('Password reset error:', err);
