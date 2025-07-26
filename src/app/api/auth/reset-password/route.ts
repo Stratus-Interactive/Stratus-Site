@@ -7,8 +7,6 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-// Export the POST handler
-
 export async function POST(request: NextRequest) {
   try {
     const { token, password } = await request.json();
@@ -28,15 +26,36 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Update user password using Supabase
-    const { error } = await supabase.auth.updateUser({
+    // First, verify the reset token
+    const { data: verifyData, error: verifyError } = await supabase.auth.verifyOtp({
+      token_hash: token,
+      type: 'recovery'
+    });
+
+    if (verifyError) {
+      console.error('Token verification error:', verifyError);
+      return NextResponse.json(
+        { success: false, error: 'Invalid or expired reset token. Please request a new password reset.' },
+        { status: 400 }
+      );
+    }
+
+    if (!verifyData.user) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid reset token. Please request a new password reset.' },
+        { status: 400 }
+      );
+    }
+
+    // Now update the user's password
+    const { error: updateError } = await supabase.auth.updateUser({
       password: password
     });
 
-    if (error) {
-      console.error('Password reset error:', error);
+    if (updateError) {
+      console.error('Password update error:', updateError);
       return NextResponse.json(
-        { success: false, error: error.message || 'Failed to reset password' },
+        { success: false, error: updateError.message || 'Failed to reset password' },
         { status: 400 }
       );
     }
