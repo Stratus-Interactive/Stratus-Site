@@ -75,7 +75,7 @@ export const Header = () => {
           alignItems: "center", 
           justifyContent: "center",
           top: isMobile ? "auto" : "56px",
-          bottom: isMobile ? "0" : "auto"
+          bottom: isMobile ? "16px" : "auto"
         }}
       >
         {/* Logo on the left, smaller for balance - hidden on mobile */}

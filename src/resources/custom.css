@@ -284,20 +284,20 @@
 @media (max-width: 768px) {
   .main-content-with-banner {
     padding-top: 48px;
-    padding-bottom: 80px;
+    padding-bottom: 96px;
   }
 }
 
 @media (max-width: 600px) {
   .main-content-with-banner {
     padding-top: 44px;
-    padding-bottom: 80px;
+    padding-bottom: 96px;
   }
 }
 
 @media (max-width: 480px) {
   .main-content-with-banner {
     padding-top: 40px;
-    padding-bottom: 80px;
+    padding-bottom: 96px;
   }
 }
