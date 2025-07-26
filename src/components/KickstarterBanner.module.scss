@@ -32,10 +32,9 @@
 
 @media (max-width: 600px) {
   .banner {
-    flex-direction: column;
+    padding: 6px 12px;
+    min-height: 36px;
     gap: 8px;
-    padding: 8px 12px;
-    min-height: 0;
   }
 }
 

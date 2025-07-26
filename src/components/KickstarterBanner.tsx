@@ -14,7 +14,7 @@ export const KickstarterBanner = () => {
     if (dismissed) setIsDismissed(true);
 
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 600);
+      setIsMobile(window.innerWidth <= 768);
     };
     
     checkMobile();
@@ -35,7 +35,7 @@ export const KickstarterBanner = () => {
   if (isDismissed || !isVisible) return null;
 
   const bannerText = isMobile 
-    ? "Stratus is live on Kickstarter!" 
+    ? "Live on Kickstarter!" 
     : "Stratus is live on Kickstarter! Back us now for early access.";
 
   return (
