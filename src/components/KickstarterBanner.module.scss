@@ -1,0 +1,61 @@
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.kickstarterIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #2BD576 0%, #1DB954 100%);
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 8px rgba(43, 213, 118, 0.3);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(43, 213, 118, 0.4);
+  }
+  
+  svg {
+    transition: transform 0.2s ease;
+  }
+  
+  &:hover svg {
+    transform: scale(1.1);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .kickstarterIcon {
+    width: 28px;
+    height: 28px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .kickstarterIcon {
+    width: 24px;
+    height: 24px;
+    
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+} 
