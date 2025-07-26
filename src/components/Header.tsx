@@ -45,10 +45,21 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: '56px' }} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: isMobile ? '0' : '56px' }} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -63,20 +74,23 @@ export const Header = () => {
         style={{ 
           alignItems: "center", 
           justifyContent: "center",
-          top: "56px"
+          top: isMobile ? "auto" : "56px",
+          bottom: isMobile ? "0" : "auto"
         }}
       >
-        {/* Logo on the left, smaller for balance */}
-        <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
-          <Image
-            src="/images/Logos/Dark-Logo.png"
-            alt="Stratus Interactive Logo"
-            width={48}
-            height={48}
-            priority
-            style={{ objectFit: "contain", borderRadius: "12px" }}
-          />
-        </Flex>
+        {/* Logo on the left, smaller for balance - hidden on mobile */}
+        {!isMobile && (
+          <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
+            <Image
+              src="/images/Logos/Dark-Logo.png"
+              alt="Stratus Interactive Logo"
+              width={48}
+              height={48}
+              priority
+              style={{ objectFit: "contain", borderRadius: "12px" }}
+            />
+          </Flex>
+        )}
         {/* Centered navigation, always centered regardless of logo */}
         <Flex fillWidth horizontal="center" style={{ justifyContent: "center", position: "absolute", left: 0, right: 0, margin: "auto", zIndex: 2 }}>
           <Flex
