@@ -47,7 +47,16 @@ function PasswordResetContent() {
           token: !!token, 
           type, 
           allParams: Object.fromEntries(searchParams.entries()),
-          url: window.location.href
+          url: window.location.href,
+          fullUrl: window.location.toString()
+        });
+        
+        // Also log any hash fragments or other URL parts
+        console.log('URL analysis:', {
+          pathname: window.location.pathname,
+          search: window.location.search,
+          hash: window.location.hash,
+          hostname: window.location.hostname
         });
         
         if (token) {
