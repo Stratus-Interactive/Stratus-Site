@@ -80,23 +80,36 @@ function PasswordResetContent() {
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('Form submission started');
     e.preventDefault();
     
+    console.log('Form validation:', { 
+      tokenValid, 
+      password: password.length, 
+      confirmPassword: confirmPassword.length,
+      passwordsMatch: password === confirmPassword,
+      passwordLength: password.length
+    });
+    
     if (!tokenValid) {
+      console.log('Token not valid');
       setError('Invalid reset link. Please request a new password reset.');
       return;
     }
 
     if (password !== confirmPassword) {
+      console.log('Passwords do not match');
       setError('Passwords do not match.');
       return;
     }
 
     if (password.length < 6) {
+      console.log('Password too short');
       setError('Password must be at least 6 characters long.');
       return;
     }
 
+    console.log('All validation passed, starting password reset');
     setLoading(true);
     setError('');
 
@@ -305,6 +318,13 @@ function PasswordResetContent() {
                   fillWidth
                   loading={loading}
                   disabled={!password || !confirmPassword || password !== confirmPassword || password.length < 6}
+                  onClick={() => console.log('Button clicked, disabled state:', { 
+                    hasPassword: !!password, 
+                    hasConfirmPassword: !!confirmPassword, 
+                    passwordsMatch: password === confirmPassword, 
+                    passwordLength: password.length,
+                    isDisabled: !password || !confirmPassword || password !== confirmPassword || password.length < 6
+                  })}
                 >
                   {loading ? "Resetting Password..." : "Reset Password"}
                 </Button>
