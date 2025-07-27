@@ -60,24 +60,8 @@ function PasswordResetContent() {
         });
         
         if (token) {
-          // We have a token, try to exchange it for a session
-          console.log('Attempting to exchange recovery token for session...');
-          
-          const { data, error } = await supabase.auth.verifyOtp({
-            token_hash: token,
-            type: 'recovery'
-          });
-          
-          console.log('Token exchange result:', { success: !!data, error, data });
-          
-          if (error) {
-            console.error('Token exchange error:', error);
-            setError('Invalid or expired reset link. Please request a new password reset.');
-            return;
-          }
-          
-          // Token exchange successful, proceed with password reset
-          console.log('Token exchange successful, setting tokenValid to true');
+          // We have a token, proceed with password reset
+          console.log('Token found, proceeding with password reset');
           setTokenValid(true);
         } else {
           // No valid token found
