@@ -101,30 +101,40 @@ function PasswordResetContent() {
     setError('');
 
     try {
-      // Get the current session to see if we have a valid user
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      // For password reset, we need to use the recovery token, not require a session
+      const token = searchParams.get('token') || 
+                    searchParams.get('access_token') || 
+                    searchParams.get('refresh_token');
       
-      console.log('Current session before password update:', { session: !!session, sessionError });
+      console.log('Using token for password reset:', { token: !!token });
       
-      if (!session) {
-        setError('No valid session found. Please request a new password reset link.');
+      if (!token) {
+        setError('No reset token found. Please request a new password reset link.');
         return;
       }
 
-      // Update password using Supabase client directly
-      const { data, error } = await supabase.auth.updateUser({
-        password: password
+      // Use the API route which handles the token validation properly
+      const response = await fetch('/api/auth/reset-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token,
+          password,
+        }),
       });
 
-      console.log('Password update result:', { success: !error, error, data });
+      const data = await response.json();
+      console.log('Password reset API response:', data);
 
-      if (error) {
-        console.error('Password update error:', error);
-        setError(error.message || 'Failed to reset password. Please try again.');
-      } else {
-        console.log('Password updated successfully:', data);
+      if (data.success) {
+        console.log('Password updated successfully via API');
         setSuccess(true);
         setError('');
+      } else {
+        console.error('Password reset API error:', data.error);
+        setError(data.error || 'Failed to reset password. Please try again.');
       }
     } catch (err) {
       console.error('Password reset error:', err);
