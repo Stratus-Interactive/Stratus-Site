@@ -59,7 +59,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: isMobile ? '0' : '56px' }} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: isMobile ? '56px' : '56px' }} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -74,8 +74,7 @@ export const Header = () => {
         style={{ 
           alignItems: "center", 
           justifyContent: "center",
-          top: isMobile ? "auto" : "56px",
-          bottom: isMobile ? "16px" : "auto"
+          top: "56px" // Always at top, underneath banner
         }}
       >
         {/* Logo on the left, smaller for balance - hidden on mobile */}
