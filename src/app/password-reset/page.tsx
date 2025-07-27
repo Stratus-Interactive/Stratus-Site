@@ -43,10 +43,15 @@ function PasswordResetContent() {
                       searchParams.get('refresh_token');
         const type = searchParams.get('type');
         
-        console.log('URL parameters:', { token: !!token, type, searchParams: Object.fromEntries(searchParams.entries()) });
+        console.log('URL parameters:', { 
+          token: !!token, 
+          type, 
+          allParams: Object.fromEntries(searchParams.entries()),
+          url: window.location.href
+        });
         
-        if (token && type === 'recovery') {
-          // We have a recovery token, try to exchange it for a session
+        if (token) {
+          // We have a token, try to exchange it for a session
           console.log('Attempting to exchange recovery token for session...');
           
           const { data, error } = await supabase.auth.verifyOtp({
