@@ -54,7 +54,7 @@ function PasswordResetContent() {
             type: 'recovery'
           });
           
-          console.log('Token exchange result:', { success: !!data, error });
+          console.log('Token exchange result:', { success: !!data, error, data });
           
           if (error) {
             console.error('Token exchange error:', error);
@@ -63,9 +63,11 @@ function PasswordResetContent() {
           }
           
           // Token exchange successful, proceed with password reset
+          console.log('Token exchange successful, setting tokenValid to true');
           setTokenValid(true);
         } else {
           // No valid token found
+          console.log('No valid token found:', { token: !!token, type });
           setError('Invalid or expired reset link. Please request a new password reset.');
         }
       } catch (error) {
@@ -99,15 +101,28 @@ function PasswordResetContent() {
     setError('');
 
     try {
+      // Get the current session to see if we have a valid user
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      
+      console.log('Current session before password update:', { session: !!session, sessionError });
+      
+      if (!session) {
+        setError('No valid session found. Please request a new password reset link.');
+        return;
+      }
+
       // Update password using Supabase client directly
-      const { error } = await supabase.auth.updateUser({
+      const { data, error } = await supabase.auth.updateUser({
         password: password
       });
+
+      console.log('Password update result:', { success: !error, error, data });
 
       if (error) {
         console.error('Password update error:', error);
         setError(error.message || 'Failed to reset password. Please try again.');
       } else {
+        console.log('Password updated successfully:', data);
         setSuccess(true);
         setError('');
       }
