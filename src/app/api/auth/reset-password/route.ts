@@ -64,10 +64,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Now update the user's password
-    const { error: updateError } = await supabase.auth.updateUser({
-      password: password
-    });
+    // Now update the user's password using admin API
+    const { error: updateError } = await supabase.auth.admin.updateUserById(
+      verifyData.user.id,
+      { password: password }
+    );
 
     if (updateError) {
       console.error('Password update error:', updateError);
