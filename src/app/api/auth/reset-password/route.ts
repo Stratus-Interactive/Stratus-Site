@@ -11,8 +11,16 @@ export async function POST(request: NextRequest) {
   try {
     const { token, password } = await request.json();
 
+    console.log('Password reset API called with:', { 
+      hasToken: !!token, 
+      tokenLength: token?.length,
+      hasPassword: !!password,
+      passwordLength: password?.length
+    });
+
     // Validate input
     if (!token || !password) {
+      console.log('Missing required fields:', { token: !!token, password: !!password });
       return NextResponse.json(
         { success: false, error: 'Token and password are required' },
         { status: 400 }
@@ -20,16 +28,25 @@ export async function POST(request: NextRequest) {
     }
 
     if (password.length < 6) {
+      console.log('Password too short:', password.length);
       return NextResponse.json(
         { success: false, error: 'Password must be at least 6 characters long' },
         { status: 400 }
       );
     }
 
+    console.log('Attempting to verify token with Supabase...');
+    
     // First, verify the reset token
     const { data: verifyData, error: verifyError } = await supabase.auth.verifyOtp({
       token_hash: token,
       type: 'recovery'
+    });
+
+    console.log('Token verification result:', { 
+      success: !verifyError, 
+      error: verifyError?.message,
+      hasUser: !!verifyData?.user 
     });
 
     if (verifyError) {
