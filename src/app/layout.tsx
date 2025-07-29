@@ -140,6 +140,9 @@ export default async function RootLayout({
               horizontal="center"
               flex={1}
               className="main-content-with-banner"
+              style={{
+                marginTop: "var(--mobile-header-spacing, 0px)"
+              }}
             >
               <Flex horizontal="center" fillWidth minHeight="0">
                 {children}

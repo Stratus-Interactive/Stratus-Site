@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --mobile-header-spacing: 0px;
 }
 
 @theme inline {
@@ -18,6 +19,13 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* Mobile header spacing */
+@media (max-width: 768px) {
+  :root {
+    --mobile-header-spacing: 104px; /* 40px banner + 64px header */
   }
 }
 

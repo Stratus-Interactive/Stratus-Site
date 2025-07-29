@@ -13,20 +13,62 @@
     mask-size: 100% 100%;
 }
 
+.mobileNav {
+    /* Enhanced mobile navigation styling */
+    button {
+        /* Larger touch targets for mobile */
+        min-height: 44px;
+        min-width: 44px;
+        padding: var(--static-space-8) var(--static-space-12);
+        
+        /* Ensure text is visible and readable */
+        color: var(--text-primary) !important;
+        font-weight: 500;
+        
+        /* Better hover states for mobile */
+        &:hover {
+            background-color: var(--neutral-alpha-weak);
+            color: var(--text-primary) !important;
+        }
+        
+        /* Selected state styling */
+        &[data-selected="true"] {
+            background-color: var(--primary-alpha-weak);
+            color: var(--primary) !important;
+            font-weight: 600;
+        }
+        
+        /* Icon styling */
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    
+    /* Smaller dividers for mobile */
+    .s-divider {
+        max-height: 20px;
+        width: 1px;
+    }
+}
+
 @media (max-width: breakpoints.$s) {
     .position {
-        top: auto;
+        top: 0;
         position: fixed;
-        bottom: var(--static-space-24);
+        bottom: auto;
         
-        /* Enhanced mobile navigation styling */
+        /* Enhanced mobile header styling */
         header {
-            padding: var(--static-space-8) var(--static-space-12);
+            padding: var(--static-space-12) var(--static-space-16);
+            background: var(--page-background);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--neutral-alpha-weak);
         }
         
         /* Ensure mobile navigation is properly spaced */
         .navigation-container {
-            max-width: 95vw;
+            max-width: 90vw;
             overflow-x: auto;
             scrollbar-width: none;
             -ms-overflow-style: none;
@@ -43,10 +85,10 @@
             padding: var(--static-space-8) var(--static-space-12);
             
             /* Ensure text is visible */
-            color: #ffffff !important;
+            color: var(--text-primary) !important;
             
             &:hover {
-                color: #ededed !important;
+                color: var(--text-primary) !important;
             }
         }
         

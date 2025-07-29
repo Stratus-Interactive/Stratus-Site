@@ -57,9 +57,13 @@ export const Header = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Calculate top position based on banner height
+  const bannerHeight = isMobile ? 40 : 48;
+  const headerTop = isMobile ? bannerHeight : 56;
+
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: isMobile ? '56px' : '56px' }} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: headerTop }} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -68,16 +72,31 @@ export const Header = () => {
         as="header"
         zIndex={9}
         fillWidth
-        padding="8"
+        padding={isMobile ? "12" : "8"}
         horizontal="center"
         data-border="rounded"
         style={{ 
           alignItems: "center", 
           justifyContent: "center",
-          top: "56px" // Always at top, underneath banner
+          top: headerTop, // Position below banner
+          height: isMobile ? "64px" : "auto" // Fixed height for mobile
         }}
       >
-        {/* Logo on the left, smaller for balance - hidden on mobile */}
+        {/* Mobile: Logo on the left */}
+        {isMobile && (
+          <Flex paddingLeft="16" vertical="center" style={{ minWidth: 60 }}>
+            <Image
+              src="/images/Logos/Dark-Logo.png"
+              alt="Stratus"
+              width={32}
+              height={32}
+              priority
+              style={{ objectFit: "contain", borderRadius: "8px" }}
+            />
+          </Flex>
+        )}
+        
+        {/* Desktop: Logo on the left, smaller for balance - hidden on mobile */}
         {!isMobile && (
           <Flex paddingLeft="12" vertical="center" style={{ minWidth: 80 }}>
             <Image
@@ -90,19 +109,40 @@ export const Header = () => {
             />
           </Flex>
         )}
-        {/* Centered navigation, always centered regardless of logo */}
-        <Flex fillWidth horizontal="center" style={{ justifyContent: "center", position: "absolute", left: 0, right: 0, margin: "auto", zIndex: 2 }}>
+        
+        {/* Centered navigation */}
+        <Flex 
+          fillWidth 
+          horizontal="center" 
+          style={{ 
+            justifyContent: "center", 
+            position: "absolute", 
+            left: 0, 
+            right: 0, 
+            margin: "auto", 
+            zIndex: 2 
+          }}
+        >
           <Flex
             background="page"
             border="neutral-alpha-weak"
-            radius="m-4"
+            radius={isMobile ? "m-2" : "m-4"}
             shadow="l"
-            padding="4"
+            padding={isMobile ? "6" : "4"}
             horizontal="center"
             zIndex={1}
-            style={{ margin: "0 auto" }}
+            style={{ 
+              margin: "0 auto",
+              minHeight: isMobile ? "48px" : "auto"
+            }}
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+            <Flex 
+              gap={isMobile ? "2" : "4"} 
+              vertical="center" 
+              textVariant={isMobile ? "body-default-xs" : "body-default-s"} 
+              suppressHydrationWarning
+              className={isMobile ? styles.mobileNav : ""}
+            >
               {routes["/"] && (
                 <>
                   <ToggleButton 
@@ -121,7 +161,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
+              <Line background="neutral-alpha-medium" vert maxHeight={isMobile ? "20" : "24"} />
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -196,24 +236,35 @@ export const Header = () => {
               )}
               {display.themeSwitcher && (
                 <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                  <Line background="neutral-alpha-medium" vert maxHeight={isMobile ? "20" : "24"} />
                   <ThemeToggle />
                 </>
               )}
             </Flex>
           </Flex>
         </Flex>
-        <Flex fillWidth horizontal="end" vertical="center">
-          <Flex
-            paddingRight="12"
-            horizontal="end"
-            vertical="center"
-            textVariant="body-default-s"
-            gap="20"
-          >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={company.location} />}</Flex>
+        
+        {/* Mobile: Theme toggle on the right */}
+        {isMobile && (
+          <Flex paddingRight="16" horizontal="end" vertical="center">
+            <ThemeToggle />
           </Flex>
-        </Flex>
+        )}
+        
+        {/* Desktop: Right side content */}
+        {!isMobile && (
+          <Flex fillWidth horizontal="end" vertical="center">
+            <Flex
+              paddingRight="12"
+              horizontal="end"
+              vertical="center"
+              textVariant="body-default-s"
+              gap="20"
+            >
+              <Flex hide="s">{display.time && <TimeDisplay timeZone={company.location} />}</Flex>
+            </Flex>
+          </Flex>
+        )}
       </Flex>
     </>
   );
