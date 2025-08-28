@@ -128,7 +128,7 @@ export const Header = () => {
             border="neutral-alpha-weak"
             radius={isMobile ? "s-8" : "m-4"}
             shadow="l"
-            padding={isMobile ? "6" : "4"}
+            padding={isMobile ? "8" : "4"}
             horizontal="center"
             zIndex={1}
             style={{ 
