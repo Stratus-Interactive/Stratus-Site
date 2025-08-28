@@ -159,17 +159,7 @@ export default function ProductivityPage() {
                   Download the Beta!
                 </Button>
               </Column>
-              {/* Kickstarter */}
-              <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
-                <div style={{ width: 120, height: 120, borderRadius: 60, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
-                  <Image src="/images/Logos/Kickstarter Icon.png" alt="Kickstarter" width={90} height={90} style={{ objectFit: "contain" }} />
-                </div>
-                <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Kickstarter</Heading>
-                <Text variant="body-default-m">Get access to the beta by backing us on Kickstarter!</Text>
-                <Button onClick={() => window.open('https://www.kickstarter.com/projects/evanbradley/stratus-simplify-your-life', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
-                  Back on Kickstarter!
-                </Button>
-              </Column>
+              {/* Removed Kickstarter section */}
             </Flex>
           </Column>
         </Column>
