@@ -276,28 +276,4 @@
 }
 
 /* Responsive main content padding for banner */
-.main-content-with-banner {
-  padding-top: 120px;
-  padding-bottom: 80px;
-}
-
-@media (max-width: 768px) {
-  .main-content-with-banner {
-    padding-top: 120px; /* Adjusted for mobile header at top */
-    padding-bottom: 32px;
-  }
-}
-
-@media (max-width: 600px) {
-  .main-content-with-banner {
-    padding-top: 120px;
-    padding-bottom: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content-with-banner {
-    padding-top: 120px;
-    padding-bottom: 16px;
-  }
-}
+/* Removed banner padding now that the header sits at the top */

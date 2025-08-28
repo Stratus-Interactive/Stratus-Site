@@ -130,7 +130,6 @@ export default async function RootLayout({
               color: effects.lines.color,
             }}
           />
-          <Flex fillWidth minHeight="16" hide="s"/>
             <Header />
             <Flex
               zIndex={0}
@@ -138,10 +137,6 @@ export default async function RootLayout({
               padding="l"
               horizontal="center"
               flex={1}
-              className="main-content-with-banner"
-              style={{
-                marginTop: "var(--mobile-header-spacing, 0px)"
-              }}
             >
               <Flex horizontal="center" fillWidth minHeight="0">
                 {children}

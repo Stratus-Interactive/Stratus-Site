@@ -57,13 +57,12 @@ export const Header = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Calculate top position based on banner height
-  const bannerHeight = isMobile ? 40 : 48;
-  const headerTop = isMobile ? bannerHeight : 56;
+  // Position header at the very top (no banner offset)
+  const headerTop = 0;
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: headerTop }} />
+      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} style={{ top: 0 }} />
       <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
@@ -78,8 +77,8 @@ export const Header = () => {
         style={{ 
           alignItems: "center", 
           justifyContent: "center",
-          top: headerTop, // Position below banner
-          height: isMobile ? "64px" : "auto" // Fixed height for mobile
+          top: 0,
+          height: isMobile ? "64px" : "auto"
         }}
       >
         {/* Mobile: Logo on the left */}
