@@ -126,7 +126,7 @@ export const Header = () => {
           <Flex
             background="page"
             border="neutral-alpha-weak"
-            radius={isMobile ? "m-2" : "m-4"}
+            radius={isMobile ? "s-8" : "m-4"}
             shadow="l"
             padding={isMobile ? "6" : "4"}
             horizontal="center"
