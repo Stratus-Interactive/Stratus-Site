@@ -55,7 +55,7 @@ export default function Home() {
               fillWidth
               style={{ minHeight: '48px' }}
             >
-              Try the Stratus Productivity Beta
+              Stratus Productivity
             </Button>
             <Button
               id="vision"
@@ -144,7 +144,7 @@ export default function Home() {
               fillWidth
               style={{ minHeight: '48px', maxWidth: '300px' }}
             >
-              Try the Stratus Productivity Beta
+              Stratus Productivity
             </Button>
           </Flex>
         </Column>
