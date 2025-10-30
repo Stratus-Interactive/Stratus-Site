@@ -112,7 +112,7 @@ export default function ProductivityPage() {
               Become more effecient
             </Heading>
             <Image 
-                src="/images/AI creation Demo.png" 
+                src="/images/product photos/AI creation Demo.png" 
                 alt="Stratus Productivity AI Demo" 
                 width={800} 
                 height={600} 
