@@ -77,7 +77,7 @@ export default function ProductivityPage() {
             </Flex>
           </Column>
                      {/* Customer Testimonial */}
-            <Column gap="m" style={{ 
+            <Column gap="s" style={{ 
               background: 'var(--neutral-alpha-weak)', 
               padding: '32px 24px', 
               borderRadius: '12px',
@@ -96,23 +96,23 @@ export default function ProductivityPage() {
                 </Text>
               </Flex>
             </Column>
-            <text>  </text>
-          <Column id="Why Stratus Productivity" fillWidth gap="m" marginBottom="xl">
+
+          <Column gap="s" id="Why Stratus Productivity?" fillWidth gap="m" marginBottom="xl">
             <Heading variant="display-strong-s" marginBottom="m"> 
               Why Status Productivity? </Heading>
             <Heading variant="heading-strong-l" marginBottom="m">
               Unified Workspace</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
-              Stratus Productivity brings together tasks, notes, events, goals, and intelligent AI support into a single, cohesive system. No more switching between apps or losing context.
+              Stratus Productivity brings together all of your tasks, notes, and events from Apple and Google into a single, cohesive system you can access form anywhere. 
             </Text>
           </Column>
 
           <Column id="AI-First Design" fillWidth gap="m" marginBottom="xl">
             <Heading variant="display-strong-l" marginBottom="m">
-              AI-First Design
+              Get Organized Faster
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
-              Every feature is built with AI capabilities in mind. From intelligent task prioritization to context-aware note organization, AI enhances every aspect of your workflow.
+              Get organized faster and stay productive for longer thanks to Stratus Interactives AI assistant Genesis. Genesis creates events and tasks from Natural language, so you can focus more on completing your tasks instead of organizing them. Genesis also provides intelligent insignt into your day helping you stay productive for longer and get wahts important done faster.
             </Text>
           </Column>
 
@@ -139,7 +139,7 @@ export default function ProductivityPage() {
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
                 <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
-                  <Image src="/images/Logos/Stratus Productivity.png" alt="Stratus Productivity Logo" width={90} height={90} style={{ objectFit: "contain" }} /></div>
+                  <Image src="/images/Logos/Stratus Productivity.png" alt="Stratus Productivity Logo" width={140} height={140} style={{ objectFit: "contain" }} /></div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Stratus Productivity: Intelligent Productivity</Heading>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
                   Get
