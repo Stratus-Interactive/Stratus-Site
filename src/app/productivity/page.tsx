@@ -8,27 +8,17 @@ import styles from "@/components/about/about.module.scss";
 
 const structure = [
   {
-    title: "Stratus Productivity",
+    title: "About",
     display: true,
     items: [],
   },
   {
-    title: "Unified Workspace",
+    title: "Why Stratus Productivity?",
     display: true,
     items: [],
   },
   {
-    title: "Ecostystem",
-    display: true,
-    items: [],
-  },
-  {
-    title: "Seamless Integration",
-    display: true,
-    items: [],
-  },
-  {
-    title: "Join the Beta",
+    title: "Download the App",
     display: true,
     items: [],
   },
@@ -47,7 +37,7 @@ export default function ProductivityPage() {
       <TableOfContents structure={structure} about={tocConfig} />
       <Flex fillWidth mobileDirection="column" horizontal="center">
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column id="Stratus Productivity" fillWidth minHeight="160" vertical="center" marginBottom="32">
+          <Column id="About" fillWidth minHeight="160" vertical="center" marginBottom="32">
             {/* Header Image */}
             <div style={{ 
               width: '100%', 
@@ -79,10 +69,10 @@ export default function ProductivityPage() {
             </Text>
             <Flex className={styles.blockAlign} gap="16" marginTop="m" mobileDirection="column" style={{ width: '100%' }}>
               <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l" fillWidth style={{ minHeight: '48px' }}>
-                Learn About the Beta
+                Download The App
               </Button>
               <Button href="/vision" variant="secondary" size="l" fillWidth style={{ minHeight: '48px' }}>
-                Learn More
+                The Future
               </Button>
             </Flex>
           </Column>
@@ -137,13 +127,11 @@ export default function ProductivityPage() {
           {/* Join the Beta Section */}
           <Column id="Join the Beta" fillWidth gap="xl" marginBottom="xl">
             <Heading variant="display-strong-s" style={{ marginBottom: 0 }}>
-              Join the Stratus Beta
+              Start Using Stratus Productivity Today
             </Heading>
             <Text variant="body-default-l" style={{ marginBottom: 0 }}>
-              Be among the first to experience a productivity system that feels handcrafted — not hacked together.<br />
-              Stratus isn&apos;t another dashboard or checklist app. It&apos;s your intelligent co-pilot: turning scattered tasks, notes, and calendars into one seamless flow.<br />
-              By joining the beta, you&apos;re helping shape a tool built for clarity, momentum, and peace of mind.<br /><br />
-              <strong>Let&apos;s build the future of productivity — together.</strong>
+              At Stratus we take pride in bringing our users the highest quality experiecne possible. Stratus Productivity is our first publicly available product and it has been designed form the ground up to take the burden out of being productive.<br />
+              <strong>Power your dreams with intelligent productivity.</strong>
             </Text>
             
             <Flex gap="48" wrap direction="row" mobileDirection="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
@@ -154,9 +142,8 @@ export default function ProductivityPage() {
                   <Image src="/images/Logos/Light-Logo.png" alt="Stratus Beta" width={90} height={90} style={{ objectFit: "contain" }} />
                 </div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Public Beta</Heading>
-                <Text variant="body-default-m">Get access through limited spots to the free public beta!</Text>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
-                  Download the Beta!
+                  Download Stratus Productivity
                 </Button>
               </Column>
               {/* Removed Kickstarter section */}
