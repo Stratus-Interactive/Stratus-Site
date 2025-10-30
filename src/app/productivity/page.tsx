@@ -97,7 +97,7 @@ export default function ProductivityPage() {
               </Flex>
             </Column>
 
-          <Column gap="s" id="Why Stratus Productivity?" fillWidth gap="m" marginBottom="xl">
+          <Column gap="s" id="Why Stratus Productivity?" fillWidth marginBottom="xl">
             <Heading variant="display-strong-s" marginBottom="m"> 
               Why Status Productivity? </Heading>
             <Heading variant="heading-strong-l" marginBottom="m">
