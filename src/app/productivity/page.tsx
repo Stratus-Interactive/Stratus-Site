@@ -112,7 +112,7 @@ export default function ProductivityPage() {
               Become more effecient
             </Heading>
             <Image 
-                src="public/images/product photos/Skye Ai.png" 
+                src="/images/product photos/Skye Ai.png" 
                 alt="Stratus Productivity AI creating taksks and events from natural language" 
                 width={800} 
                 height={600} 
