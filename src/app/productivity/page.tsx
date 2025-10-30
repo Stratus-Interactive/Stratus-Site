@@ -37,7 +37,7 @@ export default function ProductivityPage() {
       <TableOfContents structure={structure} about={tocConfig} />
       <Flex fillWidth mobileDirection="column" horizontal="center">
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>
-          <Column id="About" fillWidth minHeight="160" vertical="center" marginBottom="32">
+          <Column id="About" fillWidth minHeight="160" vertical="center" marginBottom="s">
             {/* Header Image */}
             <div style={{ 
               width: '100%', 
@@ -100,14 +100,14 @@ export default function ProductivityPage() {
           <Column gap="s" id="Why Stratus Productivity?" fillWidth marginBottom="m">
             <Heading variant="display-strong-s" marginBottom="s"> 
               Why Status Productivity? </Heading>
-            <Heading variant="heading-strong-l" marginBottom="s">
+            <Heading variant="heading-strong-l" marginBottom="xs">
               Unified Workspace</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
               Stratus Productivity brings together all of your tasks, notes, and events from Apple and Google into a single, cohesive system you can access form anywhere. 
             </Text>
           </Column>
 
-          <Column id="AI-First Design" fillWidth gap="m" marginBottom="xl">
+          <Column id="Become more effecient" fillWidth gap="m" marginBottom="m">
             <Heading variant="display-strong-l" marginBottom="m">
               Become more effecient
             </Heading>
@@ -116,7 +116,7 @@ export default function ProductivityPage() {
             </Text>
           </Column>
 
-          <Column id="Seamless Integration" fillWidth gap="m" marginBottom="xl">
+          <Column id="Seamless Integration" fillWidth gap="m" marginBottom="m">
             <Heading variant="display-strong-l" marginBottom="m">
               Seamless Integration
             </Heading>
