@@ -18,7 +18,7 @@ const structure = [
     items: [],
   },
   {
-    title: "Download the App",
+    title: "Download The App",
     display: true,
     items: [],
   },
@@ -68,7 +68,7 @@ export default function ProductivityPage() {
               Unified productivity powered by AI that reimagines how you organize thoughts, manage tasks, and maintain focus.
             </Text>
             <Flex className={styles.blockAlign} gap="16" marginTop="m" mobileDirection="column" style={{ width: '100%' }}>
-              <Button onClick={() => document.getElementById('Join the Beta')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l" fillWidth style={{ minHeight: '48px' }}>
+              <Button onClick={() => document.getElementById('Dowload The App')?.scrollIntoView({ behavior: 'smooth' })} variant="primary" size="l" fillWidth style={{ minHeight: '48px' }}>
                 Download The App
               </Button>
               <Button href="/vision" variant="secondary" size="l" fillWidth style={{ minHeight: '48px' }}>
@@ -96,18 +96,19 @@ export default function ProductivityPage() {
                 </Text>
               </Flex>
             </Column>
-            
-          <Column id="Unified Workspace" fillWidth gap="m" marginBottom="xl">
-            <Heading variant="display-strong-s" marginBottom="m">
-              Unified Workspace
-            </Heading>
+            <text> </text>
+          <Column id="Why Stratus Productivity" fillWidth gap="m" marginBottom="xl">
+            <Heading variant="display-strong-s" marginBottom="m"></Heading>
+            Why Status Productivity?
+            <Heading variant="heading-strong-l" marginBottom="m">
+              Unified Workspace</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
               Stratus Productivity brings together tasks, notes, events, goals, and intelligent AI support into a single, cohesive system. No more switching between apps or losing context.
             </Text>
           </Column>
 
           <Column id="AI-First Design" fillWidth gap="m" marginBottom="xl">
-            <Heading variant="display-strong-s" marginBottom="m">
+            <Heading variant="display-strong-l" marginBottom="m">
               AI-First Design
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -116,7 +117,7 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Seamless Integration" fillWidth gap="m" marginBottom="xl">
-            <Heading variant="display-strong-s" marginBottom="m">
+            <Heading variant="display-strong-l" marginBottom="m">
               Seamless Integration
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -125,10 +126,9 @@ export default function ProductivityPage() {
           </Column>
 
           {/* Join the Beta Section */}
-          <Column id="Join the Beta" fillWidth gap="xl" marginBottom="xl">
+          <Column id="Download the App" fillWidth gap="xl" marginBottom="xl">
             <Heading variant="display-strong-s" style={{ marginBottom: 0 }}>
-              Start Using Stratus Productivity Today
-            </Heading>
+              Start Using Stratus Productivity Today</Heading>
             <Text variant="body-default-l" style={{ marginBottom: 0 }}>
               At Stratus we take pride in bringing our users the highest quality experiecne possible. Stratus Productivity is our first publicly available product and it has been designed form the ground up to take the burden out of being productive.<br />
               <strong>Power your dreams with intelligent productivity.</strong>
@@ -139,11 +139,10 @@ export default function ProductivityPage() {
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
                 <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
-                  <Image src="/images/Logos/Light-Logo.png" alt="Stratus Beta" width={90} height={90} style={{ objectFit: "contain" }} />
-                </div>
-                <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Public Beta</Heading>
+                  <Image src="/images/Logos/Light-Logo.png" alt="Stratus Beta" width={90} height={90} style={{ objectFit: "contain" }} /></div>
+                <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Stratus Productivity: Intelligent Productivity</Heading>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
-                  Download Stratus Productivity
+                  Get
                 </Button>
               </Column>
               {/* Removed Kickstarter section */}
