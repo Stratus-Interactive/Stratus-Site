@@ -111,18 +111,6 @@ export default function ProductivityPage() {
             <Heading variant="heading-strong-l" marginBottom="xs">
               Become more effecient
             </Heading>
-            <Image 
-                src="/images/product photos/AI creation Demo.png" 
-                alt="Stratus Productivity AI Demo" 
-                width={800} 
-                height={600} 
-                style={{ 
-                  width: '75%', 
-                  height: 'auto',
-                  objectFit: 'cover'
-                }}
-                priority
-              />
             <Text variant="body-default-l" onBackground="neutral-weak">
               Get organized faster and stay productive for longer thanks to Stratus Interactives AI assistant Genesis. Genesis creates events and tasks from Natural language, so you can focus more on completing your tasks instead of organizing them. Genesis also provides intelligent insignt into your day helping you stay productive for longer and get wahts important done faster.
             </Text>
