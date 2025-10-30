@@ -126,13 +126,12 @@ export default function ProductivityPage() {
           </Column>
 
           {/* Join the Beta Section */}
-          <Column id="Download The App" fillWidth gap="xl" marginBottom="xl">
+          <Column id="Download The App" fillWidth gap="m" marginBottom="m">
             <Heading variant="display-strong-s" style={{ marginBottom: 0 }}>
-              Start Using Stratus Productivity Today</Heading>
-            <Text variant="body-default-l" style={{ marginBottom: 0 }}>
+              Start Using Stratus Productivity</Heading>
+            <Text variant="body-default-l" onBackground="neutral-weak" style={{ marginBottom: 0 }}>
               At Stratus we take pride in bringing our users the highest quality experiecne possible. Stratus Productivity is our first publicly available product and it has been designed form the ground up to take the burden out of being productive.<br />
-              <strong>Power your dreams with intelligent productivity.</strong>
-            </Text>
+              <strong>Power your dreams with intelligent productivity.</strong></Text>
             
             <Flex gap="48" wrap direction="row" mobileDirection="column" style={{ marginTop: 32, justifyContent: "center", alignItems: "stretch" }}>
               {/* TODO: For responsive row/column, use Tailwind or CSS media queries */}
