@@ -108,7 +108,7 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Become more effecient" fillWidth gap="m" marginBottom="m">
-            <Heading variant="heading-strong-l" marginBottom="m">
+            <Heading variant="heading-strong-l" marginBottom="s">
               Become more effecient
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -117,7 +117,7 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Seamless Integration" fillWidth gap="m" marginBottom="m">
-            <Heading variant="heading-strong-l" marginBottom="m">
+            <Heading variant="heading-strong-l" marginBottom="s">
               Seamless Integration
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -127,7 +127,7 @@ export default function ProductivityPage() {
 
           {/* Join the Beta Section */}
           <Column id="Download The App" fillWidth gap="m" marginBottom="m">
-            <Heading variant="display-strong-l" style={{ marginBottom: 0 }}>
+            <Heading variant="heading-strong-l" marginBottom= "s">
               Start Using Stratus Productivity</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak" style={{ marginBottom: 0 }}>
               At Stratus we take pride in bringing our users the highest quality experiecne possible. Stratus Productivity is our first publicly available product and it has been designed form the ground up to take the burden out of being productive.<br />
