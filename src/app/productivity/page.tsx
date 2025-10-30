@@ -108,7 +108,7 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Become more effecient" fillWidth gap="m" marginBottom="m">
-            <Heading variant="display-strong-l" marginBottom="m">
+            <Heading as="h2" variant="display-strong-s" marginBottom="m">
               Become more effecient
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -117,7 +117,7 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Seamless Integration" fillWidth gap="m" marginBottom="m">
-            <Heading variant="display-strong-l" marginBottom="m">
+            <Heading as="h2" variant="display-strong-s" marginBottom="m">
               Seamless Integration
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
