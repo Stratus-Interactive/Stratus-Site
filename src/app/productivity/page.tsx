@@ -137,9 +137,9 @@ export default function ProductivityPage() {
               {/* TODO: For responsive row/column, use Tailwind or CSS media queries */}
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
-                <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
+                <div style={{ width: 110, height: 110, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
                   <Image src="/images/Logos/Stratus Productivity.png" alt="Stratus Productivity Logo" width={120} height={120} style={{ objectFit: "contain" }} /></div>
-                <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Stratus Productivity: Intelligent Productivity</Heading>
+                <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 4 }}>Stratus Productivity: Intelligent Productivity</Heading>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
                   Get
                 </Button>
