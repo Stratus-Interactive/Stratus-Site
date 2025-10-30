@@ -98,7 +98,7 @@ export default function ProductivityPage() {
             </Column>
             <text> </text>
           <Column id="Why Stratus Productivity" fillWidth gap="m" marginBottom="xl">
-            <Heading variant="display-strong-s" marginBottom="m"></Heading>
+            <Heading variant="display-strong-s" marginBottom="m"> Why Status Productivity?</Heading>
             Why Status Productivity?
             <Heading variant="heading-strong-l" marginBottom="m">
               Unified Workspace</Heading>
@@ -126,7 +126,7 @@ export default function ProductivityPage() {
           </Column>
 
           {/* Join the Beta Section */}
-          <Column id="Download the App" fillWidth gap="xl" marginBottom="xl">
+          <Column id="Download The App" fillWidth gap="xl" marginBottom="xl">
             <Heading variant="display-strong-s" style={{ marginBottom: 0 }}>
               Start Using Stratus Productivity Today</Heading>
             <Text variant="body-default-l" style={{ marginBottom: 0 }}>
@@ -139,7 +139,7 @@ export default function ProductivityPage() {
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
                 <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
-                  <Image src="/images/Logos/Light-Logo.png" alt="Stratus Beta" width={90} height={90} style={{ objectFit: "contain" }} /></div>
+                  <Image src="/images/Logos/Light-Logo.png" alt="Stratus Productivity Logo" width={90} height={90} style={{ objectFit: "contain" }} /></div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Stratus Productivity: Intelligent Productivity</Heading>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
                   Get
