@@ -88,7 +88,7 @@ export default function ProductivityPage() {
                 &ldquo;The Stratus Productivity app has helped me tremendously with keeping the overhead for my landscape business organized. It takes away a lot of stress because now I have all of my info in one place. It saves me lots of time and keeps me more focused not having to go back and forth between multiple apps. I highly recommend you give Stratus a try!&rdquo;
               </Text>
               <Flex direction="column" gap="4" horizontal="center" style={{ marginTop: '16px' }}>
-                <Text variant="label-strong-s" onBackground="brand-strong">
+                <Text variant="label-strong-m" onBackground="brand-strong">
                   Reed Strozier
                 </Text>
                 <Text variant="label-default-xs" onBackground="neutral-weak">
@@ -108,16 +108,28 @@ export default function ProductivityPage() {
           </Column>
 
           <Column id="Become more effecient" fillWidth gap="m" marginBottom="m">
-            <Heading variant="heading-strong-l" marginBottom="s">
+            <Heading variant="heading-strong-l" marginBottom="xs">
               Become more effecient
             </Heading>
+            <Image 
+                src="/images/AI creation Demo.png" 
+                alt="Stratus Productivity AI Demo" 
+                width={800} 
+                height={600} 
+                style={{ 
+                  width: '75%', 
+                  height: 'auto',
+                  objectFit: 'cover'
+                }}
+                priority
+              />
             <Text variant="body-default-l" onBackground="neutral-weak">
               Get organized faster and stay productive for longer thanks to Stratus Interactives AI assistant Genesis. Genesis creates events and tasks from Natural language, so you can focus more on completing your tasks instead of organizing them. Genesis also provides intelligent insignt into your day helping you stay productive for longer and get wahts important done faster.
             </Text>
           </Column>
 
           <Column id="Seamless Integration" fillWidth gap="m" marginBottom="m">
-            <Heading variant="heading-strong-l" marginBottom="s">
+            <Heading variant="heading-strong-l" marginBottom="xs">
               Seamless Integration
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
@@ -127,7 +139,7 @@ export default function ProductivityPage() {
 
           {/* Join the Beta Section */}
           <Column id="Download The App" fillWidth gap="m" marginBottom="m">
-            <Heading variant="heading-strong-l" marginBottom= "s">
+            <Heading variant="heading-strong-l" marginBottom= "xs">
               Start Using Stratus Productivity</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak" style={{ marginBottom: 0 }}>
               At Stratus we take pride in bringing our users the highest quality experiecne possible. Stratus Productivity is our first publicly available product and it has been designed form the ground up to take the burden out of being productive.<br />
