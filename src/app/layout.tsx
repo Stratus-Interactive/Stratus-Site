@@ -1,9 +1,11 @@
 import './globals.css';
 import '@once-ui-system/core/css/styles.css';
 import '@once-ui-system/core/css/tokens.css';
+
 import '@/resources/custom.css'
 
 import classNames from "classnames";
+import Script from 'next/script';
 
 import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from '@/components';
@@ -25,7 +27,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Flex
+  <Flex
       suppressHydrationWarning
       as="html"
       lang="en"
@@ -87,6 +89,18 @@ export default async function RootLayout({
           }}
         />
       </head>
+
+      {/* Google Analytics - load after the page is interactive using Next/Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-0LQB96P7B6"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);} 
+          gtag('js', new Date());
+          gtag('config', 'G-0LQB96P7B6');`}
+      </Script>
       <Providers>
         <Column as="body" background="page" fillWidth style={{minHeight: "100vh"}} margin="0" padding="0" horizontal="center">
           <Background
