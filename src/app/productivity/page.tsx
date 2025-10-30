@@ -77,7 +77,7 @@ export default function ProductivityPage() {
             </Flex>
           </Column>
                      {/* Customer Testimonial */}
-            <Column gap="s" style={{ 
+            <Column gap="s" marginBottom="m" style={{ 
               background: 'var(--neutral-alpha-weak)', 
               padding: '32px 24px', 
               borderRadius: '12px',
@@ -97,10 +97,10 @@ export default function ProductivityPage() {
               </Flex>
             </Column>
 
-          <Column gap="s" id="Why Stratus Productivity?" fillWidth marginBottom="xl">
-            <Heading variant="display-strong-s" marginBottom="m"> 
+          <Column gap="s" id="Why Stratus Productivity?" fillWidth marginBottom="m">
+            <Heading variant="display-strong-s" marginBottom="s"> 
               Why Status Productivity? </Heading>
-            <Heading variant="heading-strong-l" marginBottom="m">
+            <Heading variant="heading-strong-l" marginBottom="s">
               Unified Workspace</Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
               Stratus Productivity brings together all of your tasks, notes, and events from Apple and Google into a single, cohesive system you can access form anywhere. 
@@ -109,7 +109,7 @@ export default function ProductivityPage() {
 
           <Column id="AI-First Design" fillWidth gap="m" marginBottom="xl">
             <Heading variant="display-strong-l" marginBottom="m">
-              Get Organized Faster
+              Become more effecient
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak">
               Get organized faster and stay productive for longer thanks to Stratus Interactives AI assistant Genesis. Genesis creates events and tasks from Natural language, so you can focus more on completing your tasks instead of organizing them. Genesis also provides intelligent insignt into your day helping you stay productive for longer and get wahts important done faster.
@@ -139,7 +139,7 @@ export default function ProductivityPage() {
               {/* Public Beta */}
               <Column horizontal="center" gap="m" style={{ minWidth: 220, maxWidth: 340, flex: 1 }}>
                 <div style={{ width: 120, height: 120, borderRadius: 24, overflow: "hidden", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto" }}>
-                  <Image src="/images/Logos/Stratus Productivity.png" alt="Stratus Productivity Logo" width={140} height={140} style={{ objectFit: "contain" }} /></div>
+                  <Image src="/images/Logos/Stratus Productivity.png" alt="Stratus Productivity Logo" width={120} height={120} style={{ objectFit: "contain" }} /></div>
                 <Heading as="h3" variant="heading-strong-l" style={{ marginTop: 16 }}>Stratus Productivity: Intelligent Productivity</Heading>
                 <Button onClick={() => window.open('https://testflight.apple.com/join/FsuGNkh4', '_blank')} variant="primary" size="l" fillWidth style={{ marginTop: 8, minHeight: '48px' }}>
                   Get
